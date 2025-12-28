@@ -87,9 +87,9 @@ const TrashIcon = ({
   };
 
   return (
-    <motion.div
+    <motion.svg
       ref={scope}
-      className={`inline-flex cursor-pointer ${className}`}
+      className={`cursor-pointer ${className} trash-icon`}
       onHoverStart={async () => {
         await hoverAnimation();
         await dangerHoverAnimation();
@@ -99,38 +99,34 @@ const TrashIcon = ({
         closeLid();
       }}
       onTap={clickAnimation}
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="trash-icon"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
 
-        <motion.path
-          d="M4 7l16 0"
-          className="trash-lid-lower"
-          style={{ transformOrigin: "50% 100%" }}
-        />
+      <motion.path
+        d="M4 7l16 0"
+        className="trash-lid-lower"
+        style={{ transformOrigin: "50% 100%" }}
+      />
 
-        <path d="M10 11l0 6" />
-        <path d="M14 11l0 6" />
-        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+      <path d="M10 11l0 6" />
+      <path d="M14 11l0 6" />
+      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
 
-        <motion.path
-          d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
-          className="trash-lid-upper"
-          style={{ transformOrigin: "50% 100%" }}
-        />
-      </svg>
-    </motion.div>
+      <motion.path
+        d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"
+        className="trash-lid-upper"
+        style={{ transformOrigin: "50% 100%" }}
+      />
+    </motion.svg>
   );
 };
 

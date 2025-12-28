@@ -54,7 +54,7 @@ export const CommandMenu = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+    <div className="bg-background/80 fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xs">
       <motion.div
         ref={dialogRef}
         initial={{ opacity: 0, scale: 0.98 }}
@@ -63,7 +63,7 @@ export const CommandMenu = () => {
         className="bg-popover text-popover-foreground w-full max-w-[450px] overflow-hidden rounded-xl border shadow-2xl"
       >
         <Command className="w-full">
-          <CommandInput placeholder="Search for icons..." autoFocus />
+          <CommandInput placeholder="Type a command or search..." autoFocus />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
 

@@ -28,28 +28,25 @@ const TerminalIcon = ({
   };
 
   return (
-    <motion.div
+    <motion.svg
       ref={scope}
       onHoverStart={hoverAnimation}
       onHoverEnd={hoverEndAnimation}
-      className={`inline-flex cursor-pointer items-center justify-center ${className}`}
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`cursor-pointer ${className}`}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <motion.path className="terminal-chevron" d="M5 7l5 5l-5 5" />
-        <motion.path className="cursor-line" d="M12 19l7 0" />
-      </svg>
-    </motion.div>
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <motion.path className="terminal-chevron" d="M5 7l5 5l-5 5" />
+      <motion.path className="cursor-line" d="M12 19l7 0" />
+    </motion.svg>
   );
 };
 

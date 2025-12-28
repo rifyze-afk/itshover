@@ -62,7 +62,7 @@ const Navbar = () => {
             className="hover:text-foreground/80 text-foreground/60 mr-3 flex items-center justify-center text-sm font-medium transition-colors"
             href=""
           >
-            <TwitterXIcon className="h-4 w-4 text-neutral-500 dark:text-neutral-500" />
+            <TwitterXIcon className="h-4 w-4" />
           </Link>
           <Link
             target="__blank"

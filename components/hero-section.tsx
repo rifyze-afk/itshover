@@ -12,6 +12,7 @@ import TerminalIcon from "@/icons/terminal-icon";
 import CurrencyRupeeIcon from "@/icons/currency-rupee-icon";
 import LikeIcon from "@/icons/like-icon";
 import SendIcon from "@/icons/send-icon";
+import GhostIcon from "@/icons/ghost-icon";
 const Hero = () => {
   const textAnimation = {
     initial: {
@@ -29,9 +30,7 @@ const Hero = () => {
   return (
     <section className="flex flex-col items-center justify-center py-20 text-center md:py-32">
       <div>
-        {/* Floating demo icons */}
         <div className="pointer-events-none hidden md:block lg:pointer-events-auto">
-          {/* Top left cluster */}
           <FloatingIcon className="text-accent-foreground/40 top-16 left-10 rotate-[-20deg]">
             <GithubIcon className="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-44 xl:w-44" />
           </FloatingIcon>
@@ -53,6 +52,9 @@ const Hero = () => {
 
           <FloatingIcon className="text-accent-foreground/25 right-24 bottom-24 rotate-[-10deg]">
             <TerminalIcon className="h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 xl:h-24 xl:w-24" />
+          </FloatingIcon>
+          <FloatingIcon className="text-accent-foreground/25 right-120 bottom-40 rotate-[-10deg]">
+            <GhostIcon className="h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 xl:h-40 xl:w-24" />
           </FloatingIcon>
         </div>
       </div>
