@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { ICON_NAMES } from "@/lib/icon-names";
+import { LINKS } from "@/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://itshover.com";
+  const baseUrl = LINKS.SITE_URL;
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

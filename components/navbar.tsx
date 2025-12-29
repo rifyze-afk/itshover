@@ -9,6 +9,8 @@ import GithubIcon from "@/icons/github-icon";
 import TwitterXIcon from "@/icons/twitter-x-icon";
 import MagnifierIcon from "@/icons/magnifier-icon";
 import { useCommandMenu } from "./command-menu-context";
+import { LINKS } from "@/constants";
+import LayersIcon from "@/icons/layers-icon";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,12 +28,8 @@ const Navbar = () => {
             className="mr-10 flex items-center justify-center space-x-2 py-6 text-center text-2xl font-bold text-neutral-600 selection:bg-emerald-500 dark:text-gray-100"
             href="/"
           >
-            <div className="relative flex h-8 w-8 items-center justify-center rounded-md border border-slate-800 bg-black text-sm text-white antialiased md:h-6 md:w-6">
-              <div className="absolute inset-x-0 -top-10 h-10 w-full rounded-full bg-white/20 blur-xl"></div>
-              <div className="text-primary relative z-20 text-sm">
-                <div className="bg-primary h-4 w-4 rounded-full" />
-              </div>
-            </div>
+            {/* <Image src="/logo.png" alt="Logo" width={24} height={24} className=""/> */}
+            <LayersIcon className="text-primary" />
             <div className="flex flex-col">
               <h1 className="text-foreground font-sans">
                 <span className="text-primary">its</span>hover
@@ -60,14 +58,14 @@ const Navbar = () => {
           <Link
             target="__blank"
             className="hover:text-foreground/80 text-foreground/60 mr-3 flex items-center justify-center text-sm font-medium transition-colors"
-            href=""
+            href={LINKS.TWITTER}
           >
             <TwitterXIcon className="h-4 w-4" />
           </Link>
           <Link
             target="__blank"
             className="hover:text-foreground/80 text-foreground/60 flex items-center justify-center text-sm font-medium transition-colors"
-            href=""
+            href={LINKS.GITHUB}
           >
             <GithubIcon size={18} />
           </Link>
@@ -149,7 +147,7 @@ const Navbar = () => {
                 <Link
                   target="_blank"
                   className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors"
-                  href=""
+                  href={LINKS.GITHUB}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <GithubIcon size={20} />
@@ -157,7 +155,7 @@ const Navbar = () => {
                 <Link
                   target="_blank"
                   className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors"
-                  href=""
+                  href={LINKS.TWITTER}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <TwitterXIcon size={20} />

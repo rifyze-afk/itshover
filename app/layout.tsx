@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import { CommandMenu } from "@/components/cmdk";
 import { CommandMenuProvider } from "@/components/command-menu-context";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { LINKS } from "@/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,16 +20,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://itshover.com"),
+  metadataBase: new URL(LINKS.SITE_URL),
   title: {
     default: "Its Hover",
-    template: "%s | Its Hover",
+    template: "%s",
   },
   description: "Animated icons that move with intent.",
   openGraph: {
     title: "Its Hover",
     description: "Animated icons that move with intent.",
-    url: "https://itshover.com",
+    url: LINKS.SITE_URL,
     siteName: "Its Hover",
     type: "website",
     images: ["/og.png"],

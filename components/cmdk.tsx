@@ -14,6 +14,7 @@ import { ICONS } from "@/lib/icons";
 import { useRouter } from "next/navigation";
 import { MoveRight } from "lucide-react";
 import { useCommandMenu } from "./command-menu-context";
+import { LINKS } from "@/constants";
 
 export const CommandMenu = () => {
   const { isOpen, setIsOpen } = useCommandMenu();
@@ -68,16 +69,24 @@ export const CommandMenu = () => {
             <CommandEmpty>No results found.</CommandEmpty>
 
             <CommandGroup heading="Socials">
-              <CommandItem className="gap-4">
+              <CommandItem
+                className="gap-4"
+                onSelect={() => {
+                  window.open(LINKS.GITHUB, "_blank");
+                  setIsOpen(false);
+                }}
+              >
                 <MoveRight className="h-4 w-4" />
                 GitHub
               </CommandItem>
-              <CommandItem className="gap-4">
+              <CommandItem
+                className="gap-4"
+                onSelect={() => {
+                  window.open(LINKS.TWITTER, "_blank");
+                  setIsOpen(false);
+                }}
+              >
                 <MoveRight className="h-4 w-4" />X formerly Twitter
-              </CommandItem>
-              <CommandItem className="gap-4">
-                <MoveRight className="h-4 w-4" />
-                LinkedIn
               </CommandItem>
             </CommandGroup>
 

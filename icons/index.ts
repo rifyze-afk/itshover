@@ -96,6 +96,7 @@ import WashingMachineIcon from "./washing-machine-icon";
 import GlobeIcon from "./globe-icon";
 import HashtagIcon from "./hashtag-icon";
 import KeyframesIcon from "./keyframes-icon";
+import LayersIcon from "./layers-icon";
 import LayoutBottombarCollapseIcon from "./layout-bottombar-collapse-icon";
 import LayoutSidebarRightIcon from "./layout-sidebar-right-icon";
 import PaintIcon from "./paint-icon";
@@ -708,6 +709,11 @@ const ICON_LIST: IconType[] = [
       "social",
       "trending",
     ],
+  },
+  {
+    name: "layers-icon",
+    icon: LayersIcon,
+    keywords: ["layers", "stack", "blocks", "overlap", "organize", "group"],
   },
   {
     name: "layout-bottombar-collapse-icon",

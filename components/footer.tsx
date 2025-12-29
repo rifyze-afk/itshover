@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { LINKS } from "@/constants";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
           <p className="text-muted-foreground text-center text-sm leading-loose md:text-left">
             Built by{" "}
             <Link
-              href=""
+              href={LINKS.CREATOR}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
@@ -25,7 +26,7 @@ const Footer = () => {
             </Link>
             . The source code is available on{" "}
             <Link
-              href=""
+              href={LINKS.GITHUB}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
