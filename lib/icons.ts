@@ -1,5 +1,13 @@
 export const ICONS = [
   {
+    name: "accessibility icon",
+    path: "/icons/accessibility-icon",
+  },
+  {
+    name: "alarm clock plus icon",
+    path: "/icons/alarm-clock-plus-icon",
+  },
+  {
     name: "align center icon",
     path: "/icons/align-center-icon",
   },
@@ -44,6 +52,10 @@ export const ICONS = [
     path: "/icons/arrow-narrow-up-icon",
   },
   {
+    name: "banana icon",
+    path: "/icons/banana-icon",
+  },
+  {
     name: "battery charging icon",
     path: "/icons/battery-charging-icon",
   },
@@ -54,6 +66,10 @@ export const ICONS = [
   {
     name: "battery pause icon",
     path: "/icons/battery-pause-icon",
+  },
+  {
+    name: "bell off icon",
+    path: "/icons/bell-off-icon",
   },
   {
     name: "bluetooth connected icon",
@@ -160,6 +176,14 @@ export const ICONS = [
     path: "/icons/dialpad-icon",
   },
   {
+    name: "discord icon",
+    path: "/icons/discord-icon",
+  },
+  {
+    name: "docker icon",
+    path: "/icons/docker-icon",
+  },
+  {
     name: "dots horizontal icon",
     path: "/icons/dots-horizontal-icon",
   },
@@ -176,6 +200,10 @@ export const ICONS = [
     path: "/icons/down-cheveron",
   },
   {
+    name: "drum icon",
+    path: "/icons/drum-icon",
+  },
+  {
     name: "external link icon",
     path: "/icons/external-link-icon",
   },
@@ -186,6 +214,22 @@ export const ICONS = [
   {
     name: "eye off icon",
     path: "/icons/eye-off-icon",
+  },
+  {
+    name: "expand icon",
+    path: "/icons/expand-icon",
+  },
+  {
+    name: "facebook icon",
+    path: "/icons/facebook-icon",
+  },
+  {
+    name: "figma icon",
+    path: "/icons/figma-icon",
+  },
+  {
+    name: "focus icon",
+    path: "/icons/focus-icon",
   },
   {
     name: "file description icon",
@@ -228,8 +272,20 @@ export const ICONS = [
     path: "/icons/globe-icon",
   },
   {
+    name: "gmail icon",
+    path: "/icons/gmail-icon",
+  },
+  {
+    name: "home icon",
+    path: "/icons/home-icon",
+  },
+  {
     name: "instagram icon",
     path: "/icons/instagram-icon",
+  },
+  {
+    name: "javascript icon",
+    path: "/icons/javascript-icon",
   },
   {
     name: "keyframes icon",
@@ -244,6 +300,10 @@ export const ICONS = [
     path: "/icons/like-icon",
   },
   {
+    name: "linkedin icon",
+    path: "/icons/linkedin-icon",
+  },
+  {
     name: "link icon",
     path: "/icons/link-icon",
   },
@@ -256,8 +316,24 @@ export const ICONS = [
     path: "/icons/magnifier-icon",
   },
   {
+    name: "meh icon",
+    path: "/icons/meh-icon",
+  },
+  {
     name: "moon icon",
     path: "/icons/moon-icon",
+  },
+  {
+    name: "mouse pointer 2 icon",
+    path: "/icons/mouse-pointer-2-icon",
+  },
+  {
+    name: "mysql icon",
+    path: "/icons/mysql-icon",
+  },
+  {
+    name: "nodejs icon",
+    path: "/icons/nodejs-icon",
   },
   {
     name: "pen icon",
@@ -266,6 +342,10 @@ export const ICONS = [
   {
     name: "phone volume",
     path: "/icons/phone-volume",
+  },
+  {
+    name: "pinterest icon",
+    path: "/icons/pinterest-icon",
   },
   {
     name: "player icon",
@@ -280,12 +360,20 @@ export const ICONS = [
     path: "/icons/plug-connected-x-icon",
   },
   {
+    name: "python icon",
+    path: "/icons/python-icon",
+  },
+  {
     name: "qrcode icon",
     path: "/icons/qrcode-icon",
   },
   {
     name: "question mark",
     path: "/icons/question-mark",
+  },
+  {
+    name: "rainbow icon",
+    path: "/icons/rainbow-icon",
   },
   {
     name: "refresh icon",
@@ -298,6 +386,10 @@ export const ICONS = [
   {
     name: "rocket icon",
     path: "/icons/rocket-icon",
+  },
+  {
+    name: "scan heart icon",
+    path: "/icons/scan-heart-icon",
   },
   {
     name: "rosette discount icon",
@@ -328,8 +420,20 @@ export const ICONS = [
     path: "/icons/skull-emoji",
   },
   {
+    name: "slack icon",
+    path: "/icons/slack-icon",
+  },
+  {
+    name: "snapchat icon",
+    path: "/icons/snapchat-icon",
+  },
+  {
     name: "sparkles icon",
     path: "/icons/sparkles-icon",
+  },
+  {
+    name: "spotify icon",
+    path: "/icons/spotify-icon",
   },
   {
     name: "stack icon",
@@ -342,6 +446,10 @@ export const ICONS = [
   {
     name: "stadium icon",
     path: "/icons/stadium-icon",
+  },
+  {
+    name: "star icon",
+    path: "/icons/star-icon",
   },
   {
     name: "sun icon",
@@ -376,12 +484,20 @@ export const ICONS = [
     path: "/icons/twitter-x-icon",
   },
   {
+    name: "typescript icon",
+    path: "/icons/typescript-icon",
+  },
+  {
     name: "users icon",
     path: "/icons/users-icon",
   },
   {
     name: "users group icon",
     path: "/icons/users-group-icon",
+  },
+  {
+    name: "vercel icon",
+    path: "/icons/vercel-icon",
   },
   {
     name: "whatsapp icon",

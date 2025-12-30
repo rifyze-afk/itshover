@@ -1,4 +1,6 @@
 import { AnimatedIconProps } from "./types";
+import AccessibilityIcon from "./accessibility-icon";
+import AlarmClockPlusIcon from "./alarm-clock-plus-icon";
 import AlignCenterIcon from "./align-center-icon";
 import ArrowBackIcon from "./arrow-back-icon";
 import ArrowBackUpIcon from "./arrow-back-up-icon";
@@ -11,9 +13,12 @@ import ArrowNarrowRightIcon from "./arrow-narrow-right-icon";
 import ArrowNarrowUpDashedIcon from "./arrow-narrow-up-dashed-icon";
 import ArrowNarrowUpIcon from "./arrow-narrow-up-icon";
 import AppleBrandLogo from "./apple-brand-logo";
+import AtSignIcon from "./at-sign-icon";
+import BananaIcon from "./banana-icon";
 import BatteryIcon from "./battery-icon";
 import BatteryChargingIcon from "./battery-charging-icon";
 import BatteryPauseIcon from "./battery-pause-icon";
+import BellOffIcon from "./bell-off-icon";
 import BluetoothConnectedIcon from "./bluetooth-connected-icon";
 import BookIcon from "./book-icon";
 import BookmarkIcon from "./bookmark-icon";
@@ -28,8 +33,11 @@ import ChartLineIcon from "./chart-line-icon";
 import ChartPieIcon from "./chart-pie-icon";
 import CheckedIcon from "./checked-icon";
 import ClockIcon from "./clock-icon";
+import CoffeeIcon from "./coffee-icon";
 import CreditCard from "./credit-card";
 import CopyIcon from "./copy-icon";
+import DiscordIcon from "./discord-icon";
+import DockerIcon from "./docker-icon";
 import CopyOffIcon from "./copy-off-icon";
 import CurrencyBitcoinIcon from "./currency-bitcoin-icon";
 import CurrencyDollarIcon from "./currency-dollar-icon";
@@ -41,47 +49,68 @@ import DialpadIcon from "./dialpad-icon";
 import DoubleCheckIcon from "./double-check-icon";
 import DotsHorizontalIcon from "./dots-horizontal-icon";
 import DotsVerticalIcon from "./dots-vertical-icon";
+import DrumIcon from "./drum-icon";
 import DownCheveron from "./down-cheveron";
 import EyeIcon from "./eye-icon";
 import EyeOffIcon from "./eye-off-icon";
+import ExpandIcon from "./expand-icon";
 import ExternalLinkIcon from "./external-link-icon";
 import FileDescriptionIcon from "./file-description-icon";
 import FlameIcon from "./flame-icon";
 import FilledBellIcon from "./filled-bell-icon";
 import FilledCheckedIcon from "./filled-checked-icon";
+import FacebookIcon from "./facebook-icon";
+import FigmaIcon from "./figma-icon";
+import FocusIcon from "./focus-icon";
 import GearIcon from "./gear-icon";
+import GmailIcon from "./gmail-icon";
 import GhostIcon from "./ghost-icon";
 import GithubIcon from "./github-icon";
 import GithubCopilotIcon from "./github-copilot-icon";
 import GitlabIcon from "./gitlab-icon";
 import HeartIcon from "./heart-icon";
 import HistoryCircleIcon from "./history-circle-icon";
+import HomeIcon from "./home-icon";
 import InfoCircleIcon from "./info-circle-icon";
 import Instagram from "./instagram-icon";
+import JavaScriptIcon from "./javascript-icon";
 import LikeIcon from "./like-icon";
+import LinkedInIcon from "./linkedin-icon";
 import LinkIcon from "./link-icon";
 import LockIcon from "./lock-icon";
 import LogoutIcon from "./logout-icon";
 import MagnifierIcon from "./magnifier-icon";
 import MailFilledIcon from "./mail-filled-icon";
+import MehIcon from "./meh-icon";
 import MessageCircleIcon from "./message-circle-icon";
 import MoonIcon from "./moon-icon";
+import MousePointer2Icon from "./mouse-pointer-2-icon";
+import MySQLIcon from "./mysql-icon";
+import NodeJSIcon from "./nodejs-icon";
 import PenIcon from "./pen-icon";
 import PhoneVolume from "./phone-volume";
+import PinterestIcon from "./pinterest-icon";
+import PythonIcon from "./python-icon";
 import PlayerIcon from "./player-icon";
 import QrCodeIcon from "./qrcode-icon";
 import QuestionMark from "./question-mark";
+import RainbowIcon from "./rainbow-icon";
 import RefreshIcon from "./refresh-icon";
 import RightCheveron from "./right-cheveron";
 import RocketIcon from "./rocket-icon";
 import RosetteDiscountIcon from "./rosette-discount-icon";
 import RosetteDiscountCheckIcon from "./rosette-discount-check-icon";
+import ScanHeartIcon from "./scan-heart-icon";
 import SendIcon from "./send-icon";
 import ShieldCheck from "./shield-check";
 import ShoppingCartIcon from "./shopping-cart-icon";
 import SimpleCheckedIcon from "./simple-checked-icon";
 import SkullEmoji from "./skull-emoji";
+import SlackIcon from "./slack-icon";
+import SnapchatIcon from "./snapchat-icon";
 import SparklesIcon from "./sparkles-icon";
+import SpotifyIcon from "./spotify-icon";
+import StarIcon from "./star-icon";
 import TelephoneIcon from "./telephone-icon";
 import TextIcon from "./text-icon";
 import ToggleIcon from "./toggle-icon";
@@ -110,6 +139,8 @@ import WhatsappIcon from "./whatsapp-icon";
 import WorldIcon from "./world-icon";
 import TerminalIcon from "./terminal-icon";
 import TwitterXIcon from "./twitter-x-icon";
+import TypeScriptIcon from "./typescript-icon";
+import VercelIcon from "./vercel-icon";
 import XIcon from "./x-icon";
 import YoutubeIcon from "./youtube-icon";
 
@@ -181,6 +212,26 @@ const ICON_LIST: IconType[] = [
     keywords: ["apple", "brand", "logo", "mac", "ios"],
   },
   {
+    name: "at-sign-icon",
+    icon: AtSignIcon,
+    keywords: ["at", "sign", "@", "email", "mention", "tag", "social"],
+  },
+  {
+    name: "banana-icon",
+    icon: BananaIcon,
+    keywords: ["banana", "fruit", "food", "tropical", "yellow"],
+  },
+  {
+    name: "accessibility-icon",
+    icon: AccessibilityIcon,
+    keywords: ["accessibility", "a11y", "wheelchair", "disabled", "inclusive"],
+  },
+  {
+    name: "alarm-clock-plus-icon",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "plus", "add", "timer", "time", "reminder"],
+  },
+  {
     name: "align-center-icon",
     icon: AlignCenterIcon,
     keywords: ["align", "center", "text", "format", "paragraph"],
@@ -199,6 +250,11 @@ const ICON_LIST: IconType[] = [
     name: "battery-pause-icon",
     icon: BatteryPauseIcon,
     keywords: ["battery", "pause", "hold", "wait"],
+  },
+  {
+    name: "bell-off-icon",
+    icon: BellOffIcon,
+    keywords: ["bell", "off", "mute", "notification", "disable", "silent"],
   },
   {
     name: "bluetooth-connected-icon",
@@ -283,6 +339,11 @@ const ICON_LIST: IconType[] = [
     name: "clock-icon",
     icon: ClockIcon,
     keywords: ["clock", "time", "watch", "timer", "schedule"],
+  },
+  {
+    name: "coffee-icon",
+    icon: CoffeeIcon,
+    keywords: ["coffee", "cup", "drink", "cafe", "steam", "hot", "beverage"],
   },
   {
     name: "credit-card",
@@ -387,6 +448,11 @@ const ICON_LIST: IconType[] = [
     keywords: ["check", "double", "read", "seen"],
   },
   {
+    name: "drum-icon",
+    icon: DrumIcon,
+    keywords: ["drum", "music", "instrument", "percussion", "beat"],
+  },
+  {
     name: "dots-horizontal-icon",
     icon: DotsHorizontalIcon,
     keywords: ["dots", "menu", "more", "options", "horizontal"],
@@ -420,9 +486,19 @@ const ICON_LIST: IconType[] = [
     ],
   },
   {
-    name: "external-link-icon",
-    icon: ExternalLinkIcon,
-    keywords: ["external", "link", "open", "new", "window", "tab", "out"],
+    name: "expand-icon",
+    icon: ExpandIcon,
+    keywords: ["expand", "fullscreen", "maximize", "enlarge", "grow"],
+  },
+  {
+    name: "figma-icon",
+    icon: FigmaIcon,
+    keywords: ["figma", "design", "ui", "ux", "prototype"],
+  },
+  {
+    name: "focus-icon",
+    icon: FocusIcon,
+    keywords: ["focus", "target", "aim", "center", "concentrate"],
   },
   {
     name: "file-description-icon",
@@ -520,6 +596,11 @@ const ICON_LIST: IconType[] = [
     keywords: ["mail", "email", "message", "envelope", "inbox"],
   },
   {
+    name: "meh-icon",
+    icon: MehIcon,
+    keywords: ["meh", "neutral", "indifferent", "emoji", "face", "emoticon"],
+  },
+  {
     name: "message-circle-icon",
     icon: MessageCircleIcon,
     keywords: ["message", "chat", "bubble", "talk", "conversation"],
@@ -553,6 +634,11 @@ const ICON_LIST: IconType[] = [
     name: "question-mark",
     icon: QuestionMark,
     keywords: ["question", "help", "info", "faq"],
+  },
+  {
+    name: "rainbow-icon",
+    icon: RainbowIcon,
+    keywords: ["rainbow", "color", "pride", "arc", "spectrum"],
   },
   {
     name: "refresh-icon",
@@ -594,6 +680,11 @@ const ICON_LIST: IconType[] = [
       "offer",
       "sale",
     ],
+  },
+  {
+    name: "scan-heart-icon",
+    icon: ScanHeartIcon,
+    keywords: ["scan", "heart", "health", "medical", "monitor", "focus"],
   },
   {
     name: "send-icon",
@@ -844,6 +935,101 @@ const ICON_LIST: IconType[] = [
     name: "youtube-icon",
     icon: YoutubeIcon,
     keywords: ["youtube", "video", "play", "media", "social"],
+  },
+  {
+    name: "home-icon",
+    icon: HomeIcon,
+    keywords: ["home", "house", "main", "dashboard", "start"],
+  },
+  {
+    name: "star-icon",
+    icon: StarIcon,
+    keywords: ["star", "favorite", "rating", "bookmark", "award"],
+  },
+  {
+    name: "facebook-icon",
+    icon: FacebookIcon,
+    keywords: ["facebook", "social", "media", "meta", "like"],
+  },
+  {
+    name: "linkedin-icon",
+    icon: LinkedInIcon,
+    keywords: ["linkedin", "social", "professional", "network", "job"],
+  },
+  {
+    name: "discord-icon",
+    icon: DiscordIcon,
+    keywords: ["discord", "chat", "gaming", "community", "voice"],
+  },
+  {
+    name: "spotify-icon",
+    icon: SpotifyIcon,
+    keywords: ["spotify", "music", "audio", "streaming", "sound"],
+  },
+  {
+    name: "pinterest-icon",
+    icon: PinterestIcon,
+    keywords: ["pinterest", "social", "pin", "board", "image"],
+  },
+  {
+    name: "javascript-icon",
+    icon: JavaScriptIcon,
+    keywords: ["javascript", "js", "code", "programming", "web"],
+  },
+  {
+    name: "python-icon",
+    icon: PythonIcon,
+    keywords: ["python", "code", "programming", "snake", "language"],
+  },
+  {
+    name: "nodejs-icon",
+    icon: NodeJSIcon,
+    keywords: ["nodejs", "node", "javascript", "server", "backend"],
+  },
+  {
+    name: "moon-icon",
+    icon: MoonIcon,
+    keywords: ["moon", "dark", "night", "theme", "mode"],
+  },
+  {
+    name: "mouse-pointer-2-icon",
+    icon: MousePointer2Icon,
+    keywords: ["mouse", "pointer", "cursor", "click", "select"],
+  },
+  {
+    name: "mysql-icon",
+    icon: MySQLIcon,
+    keywords: ["mysql", "database", "sql", "db"],
+  },
+  {
+    name: "snapchat-icon",
+    icon: SnapchatIcon,
+    keywords: ["snapchat", "social", "ghost", "snap", "chat"],
+  },
+  {
+    name: "slack-icon",
+    icon: SlackIcon,
+    keywords: ["slack", "chat", "team", "communication", "work"],
+  },
+  {
+    name: "vercel-icon",
+    icon: VercelIcon,
+    keywords: ["vercel", "deploy", "hosting", "nextjs", "triangle"],
+  },
+  {
+    name: "gmail-icon",
+    icon: GmailIcon,
+    keywords: ["gmail", "email", "google", "mail", "message"],
+  },
+  {
+    name: "docker-icon",
+    icon: DockerIcon,
+    keywords: ["docker", "container", "devops", "deployment", "whale"],
+  },
+  {
+    name: "typescript-icon",
+    icon: TypeScriptIcon,
+    keywords: ["typescript", "ts", "code", "programming", "javascript"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

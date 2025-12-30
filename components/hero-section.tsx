@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import PrimaryButton from "@/components/ui/primary-button";
 import SecondaryButton from "@/components/ui/secondary-button";
 import GithubBadge from "./github-badge";
@@ -13,6 +12,7 @@ import CurrencyRupeeIcon from "@/icons/currency-rupee-icon";
 import LikeIcon from "@/icons/like-icon";
 import SendIcon from "@/icons/send-icon";
 import GhostIcon from "@/icons/ghost-icon";
+import ArrowNarrowRightIcon from "@/icons/arrow-narrow-right-icon";
 const Hero = () => {
   const textAnimation = {
     initial: {
@@ -69,14 +69,14 @@ const Hero = () => {
           transition={textAnimation.transition}
           className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          Icons that move with <span className="text-primary">intent</span>
+          icons that move with <span className="text-primary">intent</span>
         </motion.h1>
         <motion.p
           variants={textAnimation}
           initial="initial"
           animate="animate"
           transition={textAnimation.transition}
-          className="text-muted-foreground mx-auto max-w-xl text-lg sm:text-xl"
+          className="text-muted-foreground mx-auto max-w-xl text-lg lowercase sm:text-xl"
         >
           Editable React components with motion baked in. Works seamlessly with
           Next.js, shadcn, and modern design systems.
@@ -90,13 +90,15 @@ const Hero = () => {
         className="mt-8 flex flex-col items-center gap-4 sm:flex-row"
       >
         <Link href="/icons">
-          <PrimaryButton className="cursor-pointer">
+          <PrimaryButton className="cursor-pointer lowercase">
             Browse Icons
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowNarrowRightIcon className="ml-2 h-4 w-4" />
           </PrimaryButton>
         </Link>
         <Link href="/sponsor">
-          <SecondaryButton className="cursor-pointer">Sponsor</SecondaryButton>
+          <SecondaryButton className="cursor-pointer lowercase">
+            Sponsor
+          </SecondaryButton>
         </Link>
       </motion.div>
     </section>

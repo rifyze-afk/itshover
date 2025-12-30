@@ -41,7 +41,7 @@ const HeroSection = () => {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="flex w-full flex-col items-start text-left">
               <motion.h1
-                className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+                className="mb-6 text-3xl font-bold tracking-tight lowercase sm:text-4xl lg:text-5xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
               </motion.h1>
 
               <motion.p
-                className="text-muted-foreground mb-6 max-w-md text-lg leading-relaxed"
+                className="text-muted-foreground mb-6 max-w-xl text-lg leading-relaxed lowercase"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -63,7 +63,7 @@ const HeroSection = () => {
               </motion.p>
 
               <motion.div
-                className="flex items-center gap-3"
+                className="flex items-center gap-3 lowercase"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
