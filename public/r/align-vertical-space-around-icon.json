@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "align-vertical-space-around-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/align-vertical-space-around-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst AlignVerticalSpaceAroundIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\".top-line\", { y: 3 }, { duration: 0.3, ease: \"easeOut\" });\n    animate(\".bottom-line\", { y: -3 }, { duration: 0.3, ease: \"easeOut\" });\n    animate(\".rectangle\", { scale: 0.85 }, { duration: 0.3, ease: \"easeOut\" });\n  };\n\n  const resetAnimation = () => {\n    animate(\".top-line\", { y: 0 }, { duration: 0.2, ease: \"easeInOut\" });\n    animate(\".bottom-line\", { y: 0 }, { duration: 0.2, ease: \"easeInOut\" });\n    animate(\".rectangle\", { scale: 1 }, { duration: 0.2, ease: \"easeInOut\" });\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={resetAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.rect\n        className=\"rectangle\"\n        style={{ transformOrigin: \"12px 12px\" }}\n        width=\"10\"\n        height=\"6\"\n        x=\"7\"\n        y=\"9\"\n        rx=\"2\"\n      />\n      <motion.path className=\"bottom-line\" d=\"M22 20H2\" />\n      <motion.path className=\"top-line\" d=\"M22 4H2\" />\n    </motion.svg>\n  );\n};\n\nexport default AlignVerticalSpaceAroundIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

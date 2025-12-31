@@ -1,18 +1,38 @@
 "use client";
 
-import { BentoItem } from "@/components/ui/bento-item";
-import {
-  Github,
-  Users,
-  Sparkles,
-  GitBranch,
-  GitCommit,
-  MessageCircle,
-  Heart,
-  Zap,
-  Activity,
-} from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
+
+// Image wrapper with text overlay
+const FeatureImage = ({
+  src,
+  alt,
+  label,
+  description,
+}: {
+  src: string;
+  alt: string;
+  label: string;
+  description: string;
+}) => {
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-lg">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/30 to-black/90" />
+
+      <div className="absolute bottom-3 left-3 z-10 space-y-1">
+        <p className="text-base font-medium text-white">{label}</p>
+        <p className="text-sm text-white/70">{description}</p>
+      </div>
+    </div>
+  );
+};
 
 const Features = () => {
   return (
@@ -24,38 +44,26 @@ const Features = () => {
         viewport={{ once: true }}
         className="mb-10 text-3xl font-medium"
       >
-        Features
+        features
       </motion.h2>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="md:col-span-4"
+          className="md:col-span-2"
         >
-          <BentoItem
-            icon={<Github className="h-5 w-5" />}
-            title="Open source"
-            description="Fully open, editable, and community owned."
-            variant="small"
-            backgroundIcon={[
-              {
-                icon: <Github className="h-32 w-32" />,
-                className: "text-muted-foreground/20 absolute -right-8 -top-8",
-              },
-              {
-                icon: <GitBranch className="h-24 w-24" />,
-                className:
-                  "text-muted-foreground/20 absolute -bottom-8 -left-4",
-              },
-              {
-                icon: <GitCommit className="h-20 w-20" />,
-                className: "text-muted-foreground/20 absolute bottom-4 right-4",
-              },
-            ]}
-            glow={true}
+          <FeatureCard
+            component={
+              <FeatureImage
+                src="/product/open.png"
+                alt="open source"
+                label="open source"
+                description="fully open, editable, and community owned."
+              />
+            }
           />
         </motion.div>
 
@@ -64,31 +72,17 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="md:col-span-8"
+          className="md:col-span-3"
         >
-          <BentoItem
-            icon={<Users className="h-5 w-5" />}
-            title="Community driven"
-            description="Built in public with real developer feedback."
-            variant="small"
-            backgroundIcon={[
-              {
-                icon: <Users className="h-40 w-40" />,
-                className:
-                  "text-muted-foreground/20 absolute -right-10 -top-10",
-              },
-              {
-                icon: <MessageCircle className="h-24 w-24" />,
-                className:
-                  "text-muted-foreground/20 absolute -bottom-6 left-10",
-              },
-              {
-                icon: <Heart className="h-20 w-20" />,
-                className:
-                  "text-muted-foreground/20 absolute bottom-8 right-20",
-              },
-            ]}
-            glow={true}
+          <FeatureCard
+            component={
+              <FeatureImage
+                src="/product/customize.png"
+                alt="customize"
+                label="customize"
+                description="easy to customize and modify."
+              />
+            }
           />
         </motion.div>
 
@@ -97,31 +91,17 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="md:col-span-8"
+          className="md:col-span-3"
         >
-          <BentoItem
-            icon={<Sparkles className="h-5 w-5" />}
-            title="Feel the SVG"
-            description="Motion-first icons with intent, not decoration."
-            variant="large"
-            backgroundIcon={[
-              {
-                icon: <Sparkles className="h-48 w-48" />,
-                className:
-                  "text-muted-foreground/20 absolute -right-12 -top-12",
-              },
-              {
-                icon: <Zap className="h-32 w-32" />,
-                className:
-                  "text-muted-foreground/20 absolute -bottom-10 -left-10",
-              },
-              {
-                icon: <Activity className="h-24 w-24" />,
-                className:
-                  "text-muted-foreground/20 absolute bottom-10 right-10",
-              },
-            ]}
-            glow={true}
+          <FeatureCard
+            component={
+              <FeatureImage
+                src="/product/svg.png"
+                alt="feel the svg"
+                label="feel the svg"
+                description="motion-first icons with intent, not decoration."
+              />
+            }
           />
         </motion.div>
 
@@ -130,24 +110,43 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="md:col-span-4"
+          className="md:col-span-2"
         >
-          <BentoItem
-            title="More to come"
-            variant="medium"
-            description="We are constantly adding new icons and features."
-            backgroundIcon={[
-              {
-                icon: <Sparkles className="h-32 w-32" />,
-                className:
-                  "text-muted-foreground/20 absolute -right-8 -bottom-8",
-              },
-            ]}
-            glow={true}
+          <FeatureCard
+            component={
+              <FeatureImage
+                src="/product/motion.png"
+                alt="motion first"
+                label="motion first"
+                description="every icon is designed with motion as a feature, not an afterthought."
+              />
+            }
           />
         </motion.div>
       </div>
     </section>
+  );
+};
+
+interface FeatureCardProps {
+  component: React.ReactNode;
+}
+
+const FeatureCard = ({ component }: FeatureCardProps) => {
+  return (
+    <motion.div
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="group border-border bg-card relative flex h-[400px] cursor-pointer flex-col overflow-hidden rounded-2xl border"
+    >
+      {/* glow */}
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div className="from-primary/10 absolute inset-0 bg-gradient-to-br via-transparent to-transparent" />
+      </div>
+
+      {/* image with text overlay */}
+      {component}
+    </motion.div>
   );
 };
 

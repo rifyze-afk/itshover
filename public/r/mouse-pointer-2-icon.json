@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mouse-pointer-2-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/mouse-pointer-2-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst MousePointer2Icon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\n      \".pointer\",\n      {\n        x: [0, 3, 0, -3, 0],\n        y: [0, -3, 0, 3, 0],\n      },\n      {\n        duration: 1.2,\n        ease: \"easeInOut\",\n        repeat: Infinity,\n      },\n    );\n  };\n\n  const hoverEndAnimation = () => {\n    animate(\".pointer\", { x: 0, y: 0 }, { duration: 0.3 });\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={hoverEndAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.path\n        className=\"pointer\"\n        style={{ transformOrigin: \"center\" }}\n        d=\"M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z\"\n      />\n    </motion.svg>\n  );\n};\n\nexport default MousePointer2Icon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-big-right-dash-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/arrow-big-right-dash-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst ArrowBigRightDashIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\".arrow\", { x: 4 }, { duration: 0.3, ease: \"easeOut\" });\n    animate(\n      \".dash\",\n      { scale: 1.2, opacity: 0.7 },\n      { duration: 0.3, ease: \"easeOut\" },\n    );\n  };\n\n  const resetAnimation = () => {\n    animate(\".arrow\", { x: 0 }, { duration: 0.2, ease: \"easeInOut\" });\n    animate(\n      \".dash\",\n      { scale: 1, opacity: 1 },\n      { duration: 0.2, ease: \"easeInOut\" },\n    );\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={resetAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.path\n        className=\"arrow\"\n        d=\"M11 9a1 1 0 0 0 1-1V5.061a1 1 0 0 1 1.811-.75l6.836 6.836a1.207 1.207 0 0 1 0 1.707l-6.836 6.835a1 1 0 0 1-1.811-.75V16a1 1 0 0 0-1-1H9a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z\"\n      />\n      <motion.path\n        className=\"dash\"\n        style={{ transformOrigin: \"4px 12px\" }}\n        d=\"M4 9v6\"\n      />\n    </motion.svg>\n  );\n};\n\nexport default ArrowBigRightDashIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

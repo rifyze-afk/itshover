@@ -12,9 +12,9 @@ import {
 import { motion } from "motion/react";
 import { ICONS } from "@/lib/icons";
 import { useRouter } from "next/navigation";
-import { MoveRight } from "lucide-react";
 import { useCommandMenu } from "./command-menu-context";
 import { LINKS } from "@/constants";
+import ArrowNarrowRightIcon from "@/icons/arrow-narrow-right-icon";
 
 export const CommandMenu = () => {
   const { isOpen, setIsOpen } = useCommandMenu();
@@ -76,7 +76,7 @@ export const CommandMenu = () => {
                   setIsOpen(false);
                 }}
               >
-                <MoveRight className="h-4 w-4" />
+                <ArrowNarrowRightIcon className="h-4 w-4" />
                 GitHub
               </CommandItem>
               <CommandItem
@@ -86,7 +86,7 @@ export const CommandMenu = () => {
                   setIsOpen(false);
                 }}
               >
-                <MoveRight className="h-4 w-4" />X formerly Twitter
+                <ArrowNarrowRightIcon className="h-4 w-4" />X formerly Twitter
               </CommandItem>
             </CommandGroup>
 
@@ -100,26 +100,26 @@ export const CommandMenu = () => {
                     setIsOpen(false);
                   }}
                 >
-                  <MoveRight className="h-4 w-4" />
+                  <ArrowNarrowRightIcon className="h-4 w-4" />
                   {icon.name}
                 </CommandItem>
               ))}
             </CommandGroup>
             <CommandGroup heading="Support">
               <CommandItem className="gap-4">
-                <MoveRight className="h-4 w-4" />
+                <ArrowNarrowRightIcon className="h-4 w-4" />
                 Facing issue?
               </CommandItem>
               <CommandItem className="gap-4">
-                <MoveRight className="h-4 w-4" />
+                <ArrowNarrowRightIcon className="h-4 w-4" />
                 Request feature
               </CommandItem>
               <CommandItem className="gap-4">
-                <MoveRight className="h-4 w-4" />
-                Report bug
+                <ArrowNarrowRightIcon className="h-4 w-4" />
+                Report bugF
               </CommandItem>
               <CommandItem className="gap-4">
-                <MoveRight className="h-4 w-4" />
+                <ArrowNarrowRightIcon className="h-4 w-4" />
                 Contribute
               </CommandItem>
             </CommandGroup>

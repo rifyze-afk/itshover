@@ -15,23 +15,25 @@ const CTASection = () => {
       viewport={{ once: true }}
       className="flex flex-col items-center justify-center py-20 text-center md:py-32"
     >
-      <div className="max-w-3xl space-y-6">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+      <div className="max-w-4xl space-y-6">
+        <h2 className="text-3xl font-bold tracking-tight lowercase sm:text-4xl md:text-5xl">
           Ready to add motion to your app?
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
+        <p className="text-muted-foreground mx-auto max-w-2xl text-lg lowercase sm:text-xl">
           Browse our collection of animated icons and start building beautiful,
           interactive interfaces today.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link href="/icons">
-            <PrimaryButton>
+            <PrimaryButton className="lowercase">
               Browse Icons
               <ArrowNarrowRightIcon />
             </PrimaryButton>
           </Link>
           <Link href="" target="_blank">
-            <SecondaryButton>Star on GitHub</SecondaryButton>
+            <SecondaryButton className="lowercase">
+              Star on GitHub
+            </SecondaryButton>
           </Link>
         </div>
       </div>

@@ -4,6 +4,193 @@
   "homepage": "https://intent-ui.vercel.app",
   "items": [
     {
+      "name": "align-vertical-space-around-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/align-vertical-space-around-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ambulance-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/ambulance-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "angry-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/angry-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "annoyed-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/annoyed-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-big-left-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/arrow-big-left-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-big-left-dash-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/arrow-big-left-dash-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-big-right-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/arrow-big-right-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-big-right-dash-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/arrow-big-right-dash-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-big-up-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/arrow-big-up-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-big-up-dash-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/arrow-big-up-dash-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down-1-0-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/arrow-down-1-0-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "battery-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -89,6 +276,57 @@
       ]
     },
     {
+      "name": "camera-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/camera-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "camera-off-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/camera-off-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "candy-cane-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/candy-cane-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "cart-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -114,6 +352,74 @@
       "files": [
         {
           "path": "icons/checked-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "coffee-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/coffee-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/code-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-xml-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/code-xml-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cpu-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/cpu-icon.tsx",
           "type": "registry:ui"
         },
         {
@@ -208,6 +514,23 @@
       ]
     },
     {
+      "name": "gauge-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/gauge-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "gear-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -216,6 +539,23 @@
       "files": [
         {
           "path": "icons/gear-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hand-heart-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/hand-heart-icon.tsx",
           "type": "registry:ui"
         },
         {
@@ -531,14 +871,14 @@
       ]
     },
     {
-      "name": "text-icon",
+      "name": "arrow-down-a-z-icon",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "icons/text-icon.tsx",
+          "path": "icons/arrow-down-a-z-icon.tsx",
           "type": "registry:ui"
         },
         {
@@ -624,6 +964,23 @@
       "files": [
         {
           "path": "icons/align-center-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "at-sign-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/at-sign-icon.tsx",
           "type": "registry:ui"
         },
         {
@@ -947,6 +1304,23 @@
       "files": [
         {
           "path": "icons/keyframes-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "layers-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/layers-icon.tsx",
           "type": "registry:ui"
         },
         {
@@ -1797,6 +2171,176 @@
       "files": [
         {
           "path": "icons/bluetooth-connected-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alarm-clock-plus-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/alarm-clock-plus-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bell-off-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/bell-off-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "banana-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/banana-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drum-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/drum-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "expand-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/expand-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "focus-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/focus-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "meh-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/meh-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mouse-pointer-2-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/mouse-pointer-2-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rainbow-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/rainbow-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scan-heart-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/scan-heart-icon.tsx",
           "type": "registry:ui"
         },
         {

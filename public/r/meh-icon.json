@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "meh-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/meh-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst MehIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\n      \".eyes\",\n      { scaleY: [1, 0.3, 1, 0.3, 1] },\n      { duration: 0.8, ease: \"easeInOut\" },\n    );\n    await animate(\n      \".mouth\",\n      { scaleX: [1, 0.9, 1] },\n      { duration: 0.5, ease: \"easeInOut\" },\n    );\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <circle cx=\"12\" cy=\"12\" r=\"10\" />\n      <motion.line\n        className=\"mouth\"\n        x1=\"8\"\n        x2=\"16\"\n        y1=\"15\"\n        y2=\"15\"\n        style={{ transformOrigin: \"12px 15px\" }}\n      />\n      <motion.line\n        className=\"eyes\"\n        x1=\"9\"\n        x2=\"9.01\"\n        y1=\"9\"\n        y2=\"9\"\n        style={{ transformOrigin: \"9px 9px\" }}\n      />\n      <motion.line\n        className=\"eyes\"\n        x1=\"15\"\n        x2=\"15.01\"\n        y1=\"9\"\n        y2=\"9\"\n        style={{ transformOrigin: \"15px 9px\" }}\n      />\n    </motion.svg>\n  );\n};\n\nexport default MehIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

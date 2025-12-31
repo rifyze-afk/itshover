@@ -100,7 +100,7 @@ const IconList = () => {
           ref={searchInputRef}
           value={searchQuery}
           onChange={setSearchQuery}
-          placeholder={`Search Icons (${iconCount})... (⌘ + F)`}
+          placeholder={`Search ${iconCount} Icons ... (⌘ + F)`}
           className="w-full md:w-1/2"
         />
       </motion.div>

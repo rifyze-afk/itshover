@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-down-1-0-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/arrow-down-1-0-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst ArrowDown10Icon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const swapDistance = 10;\n\n  const hoverAnimation = async () => {\n    animate(\".one\", { y: swapDistance }, { duration: 0.3, ease: \"easeInOut\" });\n    animate(\n      \".zero\",\n      { y: -swapDistance },\n      { duration: 0.3, ease: \"easeInOut\" },\n    );\n  };\n\n  const resetAnimation = async () => {\n    animate(\".one, .zero\", { y: 0 }, { duration: 0.3, ease: \"easeInOut\" });\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={resetAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <path d=\"m3 16 4 4 4-4\" />\n      <path d=\"M7 20V4\" />\n      <motion.g className=\"one\">\n        <path d=\"M17 10V4h-2\" />\n        <path d=\"M15 10h4\" />\n      </motion.g>\n      <motion.rect className=\"zero\" x=\"15\" y=\"14\" width=\"4\" height=\"6\" ry=\"2\" />\n    </motion.svg>\n  );\n};\n\nexport default ArrowDown10Icon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

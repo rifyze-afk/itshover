@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "focus-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/focus-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst FocusIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\".center\", { scale: 1.4 }, { duration: 0.25, ease: \"easeOut\" });\n\n    animate(\".corners\", { scale: 0.85 }, { duration: 0.25, ease: \"easeOut\" });\n  };\n\n  const resetAnimation = () => {\n    animate(\".center\", { scale: 1 }, { duration: 0.2, ease: \"easeInOut\" });\n\n    animate(\".corners\", { scale: 1 }, { duration: 0.2, ease: \"easeInOut\" });\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={resetAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.circle\n        className=\"center\"\n        cx=\"12\"\n        cy=\"12\"\n        r=\"3\"\n        style={{ transformOrigin: \"12px 12px\" }}\n      />\n      <motion.path className=\"corners\" d=\"M3 7V5a2 2 0 0 1 2-2h2\" />\n      <motion.path className=\"corners\" d=\"M17 3h2a2 2 0 0 1 2 2v2\" />\n      <motion.path className=\"corners\" d=\"M21 17v2a2 2 0 0 1-2 2h-2\" />\n      <motion.path className=\"corners\" d=\"M7 21H5a2 2 0 0 1-2-2v-2\" />\n    </motion.svg>\n  );\n};\n\nexport default FocusIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

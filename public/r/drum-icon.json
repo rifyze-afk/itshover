@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drum-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/drum-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst DrumIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\n      \".sticks\",\n      { y: [0, 3, 0, 3, 0] },\n      { duration: 0.6, ease: \"easeInOut\" },\n    );\n    animate(\n      \".drum-body\",\n      { scaleY: [1, 0.98, 1, 0.98, 1] },\n      { duration: 0.6, ease: \"easeInOut\" },\n    );\n    await animate(\n      \".drum-top\",\n      { scaleX: [1, 1.05, 1, 1.05, 1] },\n      { duration: 0.6, ease: \"easeInOut\" },\n    );\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.path className=\"sticks\" d=\"m2 2 8 8\" />\n      <motion.path className=\"sticks\" d=\"m22 2-8 8\" />\n      <motion.ellipse\n        className=\"drum-top\"\n        cx=\"12\"\n        cy=\"9\"\n        rx=\"10\"\n        ry=\"5\"\n        style={{ transformOrigin: \"12px 9px\" }}\n      />\n      <motion.path className=\"drum-body\" d=\"M7 13.4v7.9\" />\n      <motion.path className=\"drum-body\" d=\"M12 14v8\" />\n      <motion.path className=\"drum-body\" d=\"M17 13.4v7.9\" />\n      <motion.path\n        className=\"drum-body\"\n        style={{ transformOrigin: \"12px 13px\" }}\n        d=\"M2 9v8a10 5 0 0 0 20 0V9\"\n      />\n    </motion.svg>\n  );\n};\n\nexport default DrumIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

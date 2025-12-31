@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "annoyed-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/annoyed-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst AnnoyedIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\".eyes\", { scaleX: 0.7 }, { duration: 0.2, ease: \"easeOut\" });\n    animate(\".mouth\", { y: 1 }, { duration: 0.3, ease: \"easeOut\" });\n  };\n\n  const resetAnimation = () => {\n    animate(\".eyes\", { scaleX: 1 }, { duration: 0.2, ease: \"easeInOut\" });\n    animate(\".mouth\", { y: 0 }, { duration: 0.2, ease: \"easeInOut\" });\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={resetAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <circle cx=\"12\" cy=\"12\" r=\"10\" />\n      <motion.path className=\"mouth\" d=\"M8 15h8\" />\n      <motion.g className=\"eyes\">\n        <path d=\"M8 9h2\" />\n        <path d=\"M14 9h2\" />\n      </motion.g>\n    </motion.svg>\n  );\n};\n\nexport default AnnoyedIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,22 +1,45 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { getGithubStars } from "@/lib/stars";
+import CountUp from "./count-up";
 
 const GithubStars = () => {
+  const [stars, setStars] = useState<number | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    getGithubStars().then((count) => {
+      if (mounted) setStars(count);
+    });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   return (
-    <div className="border-border bg-background hover:bg-accent hover:text-accent-foreground flex w-fit items-center justify-center gap-2 rounded-full border px-4 py-2 shadow-sm transition-colors duration-300 ease-in-out">
+    <div className="border-border bg-background hover:bg-accent hover:text-accent-foreground flex w-fit items-center gap-2 rounded-full border px-4 py-2 shadow-sm transition-colors duration-300">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="currentColor"
         className="h-4 w-4 text-yellow-500"
       >
-        {" "}
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />{" "}
-        <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" />{" "}
-      </svg>{" "}
-      {/* <span className="text-sm font-medium">Star on GitHub</span>{" "} */}
-      <span className="text-muted-foreground text-sm font-medium">0</span>
+        <path d="M12 2l2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 16.6l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93L12 2z" />
+      </svg>
+
+      <span className="text-muted-foreground text-sm font-medium">
+        <CountUp
+          from={0}
+          to={stars || 0}
+          separator=","
+          direction="up"
+          duration={1}
+          className="count-up-text"
+        />
+      </span>
     </div>
   );
 };

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "layers-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/layers-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst LayersIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    await animate(\n      \".top-block\",\n      { x: -20 },\n      { duration: 0.4, ease: [0.4, 0, 0.2, 1] },\n    );\n  };\n\n  const hoverEndAnimation = async () => {\n    await animate(\n      \".top-block\",\n      { x: 0 },\n      { duration: 0.4, ease: [0.4, 0, 0.2, 1] },\n    );\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={hoverEndAnimation}\n      width={size}\n      height={size}\n      viewBox=\"0 0 120 120\"\n      fill=\"none\"\n      strokeWidth={strokeWidth}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.rect\n        className=\"top-block\"\n        x=\"44\"\n        y=\"22\"\n        width=\"56\"\n        height=\"36\"\n        rx=\"10\"\n        fill={color}\n      />\n\n      {/* Bottom block */}\n      <rect x=\"20\" y=\"62\" width=\"64\" height=\"40\" rx=\"12\" fill={color} />\n    </motion.svg>\n  );\n};\n\nexport default LayersIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

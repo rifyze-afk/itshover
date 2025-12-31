@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "camera-off-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/camera-off-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst CameraOffIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\n      \".slash\",\n      { scale: 1.1, rotate: 5 },\n      { duration: 0.3, ease: \"easeOut\" },\n    );\n    animate(\".camera\", { opacity: 0.4 }, { duration: 0.3, ease: \"easeOut\" });\n  };\n\n  const resetAnimation = () => {\n    animate(\n      \".slash\",\n      { scale: 1, rotate: 0 },\n      { duration: 0.2, ease: \"easeInOut\" },\n    );\n    animate(\".camera\", { opacity: 1 }, { duration: 0.2, ease: \"easeInOut\" });\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={resetAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.g className=\"camera\">\n        <path d=\"M14.564 14.558a3 3 0 1 1-4.122-4.121\" />\n        <path d=\"M20 20H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 .819-.175\" />\n        <path d=\"M9.695 4.024A2 2 0 0 1 10.004 4h3.993a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v7.344\" />\n      </motion.g>\n      <motion.path\n        className=\"slash\"\n        style={{ transformOrigin: \"12px 12px\" }}\n        d=\"m2 2 20 20\"\n      />\n    </motion.svg>\n  );\n};\n\nexport default CameraOffIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

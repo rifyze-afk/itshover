@@ -1,15 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import {
-  MessageSquare,
-  Coffee,
-  QrCode,
-  Copy,
-  Check,
-  Star,
-  Github,
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -18,24 +9,18 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-
-const DEMO_SPONSORS = [
-  {
-    name: "Alex Johnson",
-    amount: "$50",
-    message: "Great work! Keep it up.",
-  },
-  {
-    name: "Sarah Smith",
-    amount: "$25",
-    message: "Love these icons!",
-  },
-  {
-    name: "Mike Brown",
-    amount: "$10",
-    message: "Thanks for open sourcing.",
-  },
-];
+import { LINKS, SPONSOR } from "@/constants";
+import QrCodeIcon from "@/icons/qrcode-icon";
+import GithubIcon from "@/icons/github-icon";
+import AtSignIcon from "@/icons/at-sign-icon";
+import CheckedIcon from "@/icons/checked-icon";
+import CopyIcon from "@/icons/copy-icon";
+import XIcon from "@/icons/x-icon";
+import CoffeeIcon from "@/icons/coffee-icon";
+import MessageCircleIcon from "@/icons/message-circle-icon";
+import CurrencyBitcoinIcon from "@/icons/currency-bitcoin-icon";
+import CurrencyEthereumIcon from "@/icons/currency-ethereum-icon";
+import Image from "next/image";
 
 const SponsorCard = ({
   title,
@@ -88,12 +73,12 @@ const CopyField = ({ label, value }: { label: string; value: string }) => {
             <TooltipTrigger asChild>
               <button
                 onClick={handleCopy}
-                className="text-muted-foreground hover:text-foreground ml-2 transition-colors"
+                className="text-muted-foreground hover:text-foreground ml-2 flex justify-center text-center transition-colors"
               >
                 {copied ? (
-                  <Check className="h-4 w-4 text-green-500" />
+                  <CheckedIcon className="h-4 w-4 text-green-500" />
                 ) : (
-                  <Copy className="h-4 w-4" />
+                  <CopyIcon className="h-4 w-4" />
                 )}
               </button>
             </TooltipTrigger>
@@ -108,6 +93,8 @@ const CopyField = ({ label, value }: { label: string; value: string }) => {
 };
 
 export default function SponsorContent() {
+  const [showQrCode, setShowQrCode] = useState(false);
+
   return (
     <div className="bg-background text-foreground min-h-screen py-24">
       <div className="container mx-auto max-w-5xl px-4">
@@ -128,14 +115,14 @@ export default function SponsorContent() {
             </p>
             <div className="flex justify-center gap-4">
               <Button asChild size="lg" className="gap-2">
-                <Link href="" target="_blank">
-                  <MessageSquare className="h-4 w-4" />
+                <Link href={LINKS.CREATOR} target="_blank">
+                  <MessageCircleIcon className="h-4 w-4" />
                   Leave Feedback
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
-                <Link href="" target="_blank">
-                  <Github className="h-4 w-4" />
+                <Link href={LINKS.GITHUB} target="_blank">
+                  <GithubIcon className="h-4 w-4" />
                   Star on GitHub
                 </Link>
               </Button>
@@ -147,26 +134,72 @@ export default function SponsorContent() {
           <SponsorCard
             title="Buy Me a Coffee"
             description="Support with a small donation."
-            icon={<Coffee className="h-6 w-6 text-yellow-500" />}
+            icon={<CoffeeIcon className="h-6 w-6 text-yellow-500" />}
             delay={0.1}
           >
             <Button
               asChild
               className="w-full bg-[#FFDD00] text-black hover:bg-[#FFDD00]/90"
             >
-              <Link href="" target="_blank">
+              <Link href={SPONSOR.buymeacoffee} target="_blank">
                 Buy Me a Coffee
               </Link>
             </Button>
           </SponsorCard>
 
+          <div className="relative">
+            <SponsorCard
+              title="UPI"
+              description="Direct transfer via UPI."
+              icon={<AtSignIcon className="h-6 w-6 text-blue-500" />}
+              delay={0.2}
+            >
+              <>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => setShowQrCode(true)}
+                        className="text-muted-foreground hover:text-primary absolute top-6 right-6 transition-colors"
+                      >
+                        <QrCodeIcon className="h-5 w-5" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>See QR Code</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+                <CopyField label="UPI ID" value={SPONSOR.upiId} />
+              </>
+            </SponsorCard>
+          </div>
+
           <SponsorCard
-            title="UPI"
-            description="Direct transfer via UPI."
-            icon={<QrCode className="h-6 w-6 text-blue-500" />}
-            delay={0.2}
+            title="Bitcoin (BTC)"
+            description="Support via Bitcoin."
+            icon={<CurrencyBitcoinIcon className="h-6 w-6 text-orange-500" />}
+            delay={0.3}
           >
-            <CopyField label="UPI ID" value="" />
+            <CopyField label="BTC Address" value={SPONSOR.btc} />
+          </SponsorCard>
+
+          <SponsorCard
+            title="Ethereum (ETH)"
+            description="Support via Ethereum."
+            icon={<CurrencyEthereumIcon className="h-6 w-6 text-purple-500" />}
+            delay={0.4}
+          >
+            <CopyField label="ETH Address" value={SPONSOR.eth} />
+          </SponsorCard>
+
+          <SponsorCard
+            title="Solana (SOL)"
+            description="Support via Solana."
+            icon={<AtSignIcon className="h-6 w-6 text-green-500" />}
+            delay={0.5}
+          >
+            <CopyField label="SOL Address" value={SPONSOR.sol} />
           </SponsorCard>
         </div>
 
@@ -180,26 +213,8 @@ export default function SponsorContent() {
             <h2 className="mb-8 text-3xl font-bold tracking-tight">
               Recent Sponsors
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {DEMO_SPONSORS.map((sponsor, index) => (
-                <div
-                  key={index}
-                  className="bg-card/50 flex items-center gap-4 rounded-xl border p-4 backdrop-blur-sm"
-                >
-                  <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-full text-xl font-bold">
-                    {sponsor.name.charAt(0)}
-                  </div>
-                  <div className="text-left">
-                    <div className="font-semibold">{sponsor.name}</div>
-                    <div className="text-muted-foreground text-sm">
-                      {sponsor.message}
-                    </div>
-                  </div>
-                  <div className="ml-auto font-mono text-sm font-medium text-green-500">
-                    {sponsor.amount}
-                  </div>
-                </div>
-              ))}
+            <div className="flex items-center justify-center">
+              No sponsors yet
             </div>
           </motion.div>
         </div>
@@ -211,9 +226,6 @@ export default function SponsorContent() {
           className="bg-card/50 mt-16 rounded-2xl border p-8 text-center backdrop-blur-sm"
         >
           <div className="flex flex-col items-center gap-4">
-            <div className="bg-primary/10 rounded-full p-4">
-              <Star className="text-primary h-8 w-8 fill-current" />
-            </div>
             <h2 className="text-2xl font-bold">Star us on GitHub</h2>
             <p className="text-muted-foreground max-w-lg">
               If you like this project, please give it a star on GitHub. It
@@ -221,13 +233,50 @@ export default function SponsorContent() {
               more!
             </p>
             <Button asChild size="lg" variant="secondary" className="gap-2">
-              <Link href="" target="_blank">
-                <Github className="h-4 w-4" />
+              <Link href={LINKS.GITHUB} target="_blank">
+                <GithubIcon className="h-4 w-4" />
                 Star Repository
               </Link>
             </Button>
           </div>
         </motion.div>
+
+        {/* QR Code Modal */}
+        {showQrCode && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+            onClick={() => setShowQrCode(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+              className="bg-card relative w-full max-w-md rounded-2xl border p-6"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowQrCode(false)}
+                className="text-muted-foreground hover:text-foreground absolute top-4 right-4 transition-colors"
+              >
+                <XIcon className="h-5 w-5" />
+              </button>
+              <h3 className="mb-4 text-xl font-semibold">UPI QR Code</h3>
+              <div className="rounded-lg bg-white p-4">
+                <Image
+                  src={SPONSOR.qrCode}
+                  alt="UPI QR Code"
+                  width={200}
+                  height={200}
+                  className="h-auto w-full"
+                />
+              </div>
+              <p className="text-muted-foreground mt-4 text-center text-sm">
+                Scan this QR code to make a UPI payment
+              </p>
+            </motion.div>
+          </div>
+        )}
       </div>
     </div>
   );

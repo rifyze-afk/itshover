@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cpu-icon",
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "icons/cpu-icon.tsx",
+      "content": "import { AnimatedIconProps } from \"./types\";\nimport { motion, useAnimate } from \"motion/react\";\n\nconst CpuIcon = ({\n  size = 24,\n  color = \"currentColor\",\n  strokeWidth = 2,\n  className = \"\",\n}: AnimatedIconProps) => {\n  const [scope, animate] = useAnimate();\n\n  const hoverAnimation = async () => {\n    animate(\n      \".pins\",\n      { scale: [1, 1.15, 1] },\n      { duration: 0.5, ease: \"easeInOut\" },\n    );\n    animate(\n      \".inner\",\n      { scale: [1, 0.9, 1] },\n      { duration: 0.5, ease: \"easeInOut\" },\n    );\n    animate(\n      \".outer\",\n      { scale: [1, 1.05, 1] },\n      { duration: 0.5, ease: \"easeInOut\" },\n    );\n  };\n\n  const resetAnimation = () => {\n    animate(\n      \".pins, .inner, .outer\",\n      { scale: 1 },\n      { duration: 0.2, ease: \"easeInOut\" },\n    );\n  };\n\n  return (\n    <motion.svg\n      ref={scope}\n      onHoverStart={hoverAnimation}\n      onHoverEnd={resetAnimation}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke={color}\n      strokeWidth={strokeWidth}\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      className={`cursor-pointer ${className}`}\n    >\n      <motion.g className=\"pins\">\n        <path d=\"M12 20v2\" />\n        <path d=\"M12 2v2\" />\n        <path d=\"M17 20v2\" />\n        <path d=\"M17 2v2\" />\n        <path d=\"M2 12h2\" />\n        <path d=\"M2 17h2\" />\n        <path d=\"M2 7h2\" />\n        <path d=\"M20 12h2\" />\n        <path d=\"M20 17h2\" />\n        <path d=\"M20 7h2\" />\n        <path d=\"M7 20v2\" />\n        <path d=\"M7 2v2\" />\n      </motion.g>\n      <motion.rect\n        className=\"outer\"\n        style={{ transformOrigin: \"12px 12px\" }}\n        x=\"4\"\n        y=\"4\"\n        width=\"16\"\n        height=\"16\"\n        rx=\"2\"\n      />\n      <motion.rect\n        className=\"inner\"\n        style={{ transformOrigin: \"12px 12px\" }}\n        x=\"8\"\n        y=\"8\"\n        width=\"8\"\n        height=\"8\"\n        rx=\"1\"\n      />\n    </motion.svg>\n  );\n};\n\nexport default CpuIcon;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "icons/types.ts",
+      "content": "export interface AnimatedIconProps {\n  /** Icon size in pixels or CSS string */\n  size?: number | string;\n  /** Icon color (defaults to currentColor) */\n  color?: string;\n  /** SVG stroke width */\n  strokeWidth?: number;\n  /** Additional CSS classes */\n  className?: string;\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

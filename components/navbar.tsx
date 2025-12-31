@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { ModeToggle } from "./ui/toggle-button";
 import { Kbd } from "@/components/ui/kbd";
 import GithubStars from "./github-stars";
@@ -11,6 +10,8 @@ import MagnifierIcon from "@/icons/magnifier-icon";
 import { useCommandMenu } from "./command-menu-context";
 import { LINKS } from "@/constants";
 import LayersIcon from "@/icons/layers-icon";
+import AlignCenterIcon from "@/icons/align-center-icon";
+import XIcon from "@/icons/x-icon";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -100,9 +101,9 @@ const Navbar = () => {
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <XIcon className="h-6 w-6" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <AlignCenterIcon className="h-6 w-6" />
             )}
           </button>
         </div>

@@ -1,7 +1,7 @@
 import { AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-const TextIcon = ({ size = 40, className = "" }: AnimatedIconProps) => {
+const ArrowDownAZIcon = ({ size = 40, className = "" }: AnimatedIconProps) => {
   const [scope, animate] = useAnimate();
 
   const swapDistance = 24;
@@ -79,4 +79,4 @@ const TextIcon = ({ size = 40, className = "" }: AnimatedIconProps) => {
   );
 };
 
-export default TextIcon;
+export default ArrowDownAZIcon;

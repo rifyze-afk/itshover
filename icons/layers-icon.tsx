@@ -36,7 +36,7 @@ const LayersIcon = ({
       fill="none"
       strokeWidth={strokeWidth}
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={`cursor-pointer ${className}`}
     >
       <motion.rect
         className="top-block"
