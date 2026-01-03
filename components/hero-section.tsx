@@ -54,7 +54,7 @@ const Hero = () => {
           />
         </a>
       </div>
-      <div className="z-10 max-w-3xl space-y-4">
+      <div className="z-10 max-w-3xl space-y-4 px-6">
         <motion.h1
           variants={textAnimation}
           initial="initial"
