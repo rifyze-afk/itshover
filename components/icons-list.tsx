@@ -6,6 +6,7 @@ import Fuse from "fuse.js";
 import SearchInput, { SearchInputRef } from "./ui/search-input";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
+import { isMac } from "@/lib/utils";
 
 const IconList = () => {
   const searchInputRef = useRef<SearchInputRef>(null);
@@ -100,7 +101,7 @@ const IconList = () => {
           ref={searchInputRef}
           value={searchQuery}
           onChange={setSearchQuery}
-          placeholder={`Search ${iconCount} Icons ... (⌘ + F)`}
+          placeholder={`Search ${iconCount} Icons ... (${isMac() ? "⌘" : "Ctrl"} + F)`}
           className="w-full md:w-1/2"
         />
       </motion.div>

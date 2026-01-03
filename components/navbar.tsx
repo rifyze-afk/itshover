@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "./ui/toggle-button";
 import { Kbd } from "@/components/ui/kbd";
@@ -12,6 +12,7 @@ import { LINKS } from "@/constants";
 import LayersIcon from "@/icons/layers-icon";
 import AlignCenterIcon from "@/icons/align-center-icon";
 import XIcon from "@/icons/x-icon";
+import { isMac } from "@/lib/utils";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -89,7 +90,7 @@ const Navbar = () => {
               className="hover:text-foreground/80 text-foreground/60 w-32 cursor-pointer bg-transparent pr-4 pl-2 text-xs font-medium transition-colors outline-none sm:text-sm xl:w-40"
             />
             <Kbd>
-              <span className="text-xs">⌘</span>K
+              <span className="text-xs">{isMac() ? "⌘" : "Ctrl+"}</span>K
             </Kbd>
           </button>
         </div>
@@ -138,9 +139,6 @@ const Navbar = () => {
                 <MagnifierIcon className="text-neutral-500" size={16} />
                 <span>Search...</span>
               </div>
-              <Kbd>
-                <span className="text-xs">⌘</span>K
-              </Kbd>
             </button>
 
             <div className="flex items-center justify-between border-t border-white/10 pt-4">
