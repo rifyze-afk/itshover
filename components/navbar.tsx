@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ModeToggle } from "./ui/toggle-button";
 import { Kbd } from "@/components/ui/kbd";
@@ -15,7 +15,12 @@ import XIcon from "@/icons/x-icon";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMac, setIsMac] = useState(true);
   const { toggle: toggleCommandMenu } = useCommandMenu();
+
+  useEffect(() => {
+    setIsMac(navigator.userAgent.toLowerCase().includes("mac"));
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -89,7 +94,7 @@ const Navbar = () => {
               className="hover:text-foreground/80 text-foreground/60 w-32 cursor-pointer bg-transparent pr-4 pl-2 text-xs font-medium transition-colors outline-none sm:text-sm xl:w-40"
             />
             <Kbd>
-              <span className="text-xs">⌘</span>K
+              <span className="text-xs">{isMac ? "⌘" : "Ctrl+"}</span>K
             </Kbd>
           </button>
         </div>
@@ -139,7 +144,7 @@ const Navbar = () => {
                 <span>Search...</span>
               </div>
               <Kbd>
-                <span className="text-xs">⌘</span>K
+                <span className="text-xs">{isMac ? "⌘" : "Ctrl+"}</span>K
               </Kbd>
             </button>
 
