@@ -39,14 +39,14 @@ const Hero = () => {
             <GithubIcon className="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-44 xl:w-44" />
           </FloatingIcon>
 
-          <FloatingIcon className="text-accent-foreground/30 top-60 left-36 rotate-15">
+          <FloatingIcon className="top-60 left-36 rotate-15 text-[color-mix(in_oklch,var(--accent-foreground)_20%,white)]">
             <LikeIcon className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 xl:h-52 xl:w-52" />
           </FloatingIcon>
           <FloatingIcon className="text-accent-foreground/40 top-20 right-20 rotate-25">
             <Stack3Icon className="h-24 w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-36 xl:w-36" />
           </FloatingIcon>
 
-          <FloatingIcon className="text-accent-foreground/30 right-36 bottom-60 rotate-[-15deg]">
+          <FloatingIcon className="right-36 bottom-60 rotate-[-15deg] text-[color-mix(in_oklch,var(--accent-foreground)_20%,white)]">
             <SendIcon className="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-44 xl:w-44" />
           </FloatingIcon>
 
