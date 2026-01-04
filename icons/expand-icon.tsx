@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type ExpandIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const ExpandIcon = forwardRef<ExpandIconHandle, AnimatedIconProps>(
+const ExpandIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

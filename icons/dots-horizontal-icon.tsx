@@ -1,16 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type DotsHorizontalIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const DotsHorizontalIcon = forwardRef<
-  DotsHorizontalIconHandle,
-  AnimatedIconProps
->(
+const DotsHorizontalIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

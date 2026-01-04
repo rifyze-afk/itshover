@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type DialpadIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const DialpadIcon = forwardRef<DialpadIconHandle, AnimatedIconProps>(
+const DialpadIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   ({ size = 24, color = "currentColor", className = "" }, ref) => {
     const [scope, animate] = useAnimate();
 

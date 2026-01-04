@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type SnapchatIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const SnapchatIcon = forwardRef<SnapchatIconHandle, AnimatedIconProps>(
+const SnapchatIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

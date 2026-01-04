@@ -1,14 +1,9 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type LayoutSidebarRightIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
 const LayoutSidebarRightIcon = forwardRef<
-  LayoutSidebarRightIconHandle,
+  AnimatedIconHandle,
   AnimatedIconProps
 >(
   (

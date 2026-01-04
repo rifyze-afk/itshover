@@ -153,15 +153,10 @@ Create a new file in `icons/` directory. Follow the exact same pattern as existi
 
 ```tsx
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type YourIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const YourIcon = forwardRef<YourIconHandle, AnimatedIconProps>(
+const YourIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,
@@ -212,9 +207,9 @@ export default YourIcon;
 
 Key requirements:
 
-- Use `forwardRef` and `useImperativeHandle`
+- Use `forwardRef` with `AnimatedIconHandle` from `./types`
 - Use `motion/react` for animations
-- Export type handle for imperative control
+- Implement `startAnimation` and `stopAnimation` via `useImperativeHandle`
 - Check existing icons like `github-icon.tsx` for reference
 
 ### Step 2: Register the Icon
@@ -275,6 +270,89 @@ npm run build
 ### Step 5: Create PR
 
 See [Submitting Changes](#submitting-changes) section.
+
+## Testing
+
+Before submitting your changes, verify that icons work correctly:
+
+### Visual Testing (Doc Site)
+
+1. Start the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Open http://localhost:3000/icons in your browser
+
+3. Verify:
+   - Your icon appears in the gallery
+   - Hover animations work correctly
+   - No console errors appear
+   - Click on the icon to view its detail page
+
+### Testing as a Library Consumer
+
+To verify icons work when installed via the shadcn CLI:
+
+1. Create a test project (outside or inside the repo):
+
+   ```bash
+   npx create-next-app@latest test-consumer --typescript --tailwind --app
+   cd test-consumer
+   npm install motion
+   npx shadcn@latest init --defaults
+   ```
+
+2. Add an icon from your local registry:
+
+   ```bash
+   npx shadcn@latest add "http://localhost:3000/r/github-icon.json"
+   ```
+
+3. Create a test page (`app/page.tsx`):
+
+   ```tsx
+   "use client";
+   import { useRef } from "react";
+   import GithubIcon from "@/components/ui/github-icon";
+   import { AnimatedIconHandle } from "@/components/ui/types";
+
+   export default function Home() {
+     const iconRef = useRef<AnimatedIconHandle>(null);
+
+     return (
+       <div className="flex flex-col items-center gap-4 p-10">
+         <GithubIcon ref={iconRef} size={48} />
+         <button onClick={() => iconRef.current?.startAnimation()}>
+           Start Animation
+         </button>
+       </div>
+     );
+   }
+   ```
+
+4. Run the test project:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Verify:
+   - Icon renders correctly
+   - Hover animation works
+   - Button triggers animation via ref
+   - No TypeScript errors
+
+### Quick Checklist
+
+```bash
+# Run all checks before submitting
+npm run check
+
+# Verify registry builds successfully
+npm run registry:build
+```
 
 ## Making Changes
 

@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type CopyOffIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const CopyOffIcon = forwardRef<CopyOffIconHandle, AnimatedIconProps>(
+const CopyOffIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

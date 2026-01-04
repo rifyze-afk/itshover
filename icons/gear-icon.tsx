@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type GearIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const GearIcon = forwardRef<GearIconHandle, AnimatedIconProps>(
+const GearIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

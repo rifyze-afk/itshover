@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type CoffeeIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const CoffeeIcon = forwardRef<CoffeeIconHandle, AnimatedIconProps>(
+const CoffeeIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

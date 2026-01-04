@@ -1,14 +1,9 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type ArrowNarrowUpDashedIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
 const ArrowNarrowUpDashedIcon = forwardRef<
-  ArrowNarrowUpDashedIconHandle,
+  AnimatedIconHandle,
   AnimatedIconProps
 >(
   (

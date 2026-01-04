@@ -1,14 +1,9 @@
 "use client";
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type BrandGoogleIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const BrandGoogleIcon = forwardRef<BrandGoogleIconHandle, AnimatedIconProps>(
+const BrandGoogleIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   ({ size = 24, color = "currentColor", className = "" }, ref) => {
     const [scope, animate] = useAnimate();
 

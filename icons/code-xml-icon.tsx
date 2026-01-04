@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type CodeXmlIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const CodeXmlIcon = forwardRef<CodeXmlIconHandle, AnimatedIconProps>(
+const CodeXmlIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

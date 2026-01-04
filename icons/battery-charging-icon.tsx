@@ -1,17 +1,9 @@
 "use client";
 import { forwardRef, useImperativeHandle, useEffect } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type BatteryChargingIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const BatteryChargingIcon = forwardRef<
-  BatteryChargingIconHandle,
-  AnimatedIconProps
->(
+const BatteryChargingIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2.5, className = "" },
     ref,

@@ -1,16 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type AlarmClockPlusIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const AlarmClockPlusIcon = forwardRef<
-  AlarmClockPlusIconHandle,
-  AnimatedIconProps
->(
+const AlarmClockPlusIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

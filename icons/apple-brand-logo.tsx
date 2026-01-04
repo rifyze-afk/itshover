@@ -1,15 +1,10 @@
 "use client";
 
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type AppleBrandLogoHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const AppleBrandLogo = forwardRef<AppleBrandLogoHandle, AnimatedIconProps>(
+const AppleBrandLogo = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

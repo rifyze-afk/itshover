@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type CameraOffIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const CameraOffIcon = forwardRef<CameraOffIconHandle, AnimatedIconProps>(
+const CameraOffIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

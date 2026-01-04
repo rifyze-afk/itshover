@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type ShieldCheckHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const ShieldCheck = forwardRef<ShieldCheckHandle, AnimatedIconProps>(
+const ShieldCheck = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

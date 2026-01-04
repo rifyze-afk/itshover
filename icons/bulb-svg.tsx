@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type BulbSvgHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const BulbSvg = forwardRef<BulbSvgHandle, AnimatedIconProps>(
+const BulbSvg = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

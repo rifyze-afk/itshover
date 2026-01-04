@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type ShoppingCartIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const ShoppingCartIcon = forwardRef<ShoppingCartIconHandle, AnimatedIconProps>(
+const ShoppingCartIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

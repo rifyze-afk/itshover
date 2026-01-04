@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type ArrowBigDownIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const ArrowBigDownIcon = forwardRef<ArrowBigDownIconHandle, AnimatedIconProps>(
+const ArrowBigDownIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   ({ size = 40, className = "" }, ref) => {
     const [scope, animate] = useAnimate();
 

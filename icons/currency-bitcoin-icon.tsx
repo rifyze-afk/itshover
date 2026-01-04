@@ -1,16 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type CurrencyBitcoinIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const CurrencyBitcoinIcon = forwardRef<
-  CurrencyBitcoinIconHandle,
-  AnimatedIconProps
->(
+const CurrencyBitcoinIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

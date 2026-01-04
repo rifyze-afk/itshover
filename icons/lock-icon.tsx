@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type LockIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const LockIcon = forwardRef<LockIconHandle, AnimatedIconProps>(
+const LockIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 48, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

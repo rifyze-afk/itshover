@@ -1,16 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type MousePointer2IconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const MousePointer2Icon = forwardRef<
-  MousePointer2IconHandle,
-  AnimatedIconProps
->(
+const MousePointer2Icon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

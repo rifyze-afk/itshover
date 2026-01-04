@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type BookmarkIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const BookmarkIcon = forwardRef<BookmarkIconHandle, AnimatedIconProps>(
+const BookmarkIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

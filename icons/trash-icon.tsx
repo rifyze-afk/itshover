@@ -1,5 +1,5 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
 export interface TrashIconProps extends AnimatedIconProps {
@@ -8,12 +8,7 @@ export interface TrashIconProps extends AnimatedIconProps {
   keepOpenOnDelete?: boolean;
 }
 
-export type TrashIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const TrashIcon = forwardRef<TrashIconHandle, TrashIconProps>(
+const TrashIcon = forwardRef<AnimatedIconHandle, TrashIconProps>(
   (
     {
       shakeOnClick = false,

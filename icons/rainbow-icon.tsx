@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type RainbowIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const RainbowIcon = forwardRef<RainbowIconHandle, AnimatedIconProps>(
+const RainbowIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

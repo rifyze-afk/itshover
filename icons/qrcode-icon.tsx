@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type QrcodeIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const QrcodeIcon = forwardRef<QrcodeIconHandle, AnimatedIconProps>(
+const QrcodeIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

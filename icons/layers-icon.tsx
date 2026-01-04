@@ -1,13 +1,8 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type LayersIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const LayersIcon = forwardRef<LayersIconHandle, AnimatedIconProps>(
+const LayersIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,

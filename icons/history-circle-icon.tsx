@@ -1,16 +1,8 @@
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import { AnimatedIconProps } from "./types";
+import { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-export type HistoryCircleIconHandle = {
-  startAnimation: () => void;
-  stopAnimation: () => void;
-};
-
-const HistoryCircleIcon = forwardRef<
-  HistoryCircleIconHandle,
-  AnimatedIconProps
->(
+const HistoryCircleIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,
