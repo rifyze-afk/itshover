@@ -34,15 +34,29 @@ interface Registry {
  * Get all icon files from the icons directory
  */
 function getIconFiles(): string[] {
-  const files = fs.readdirSync(ICONS_DIR);
+  try {
+    const files = fs.readdirSync(ICONS_DIR);
 
-  return files.filter((file) => {
-    // Only include .tsx files
-    if (!file.endsWith(".tsx")) return false;
-    // Exclude non-icon files
-    if (EXCLUDED_FILES.includes(file)) return false;
-    return true;
-  });
+    return files.filter((file) => {
+      // Only include .tsx files
+      if (!file.endsWith(".tsx")) return false;
+      // Exclude non-icon files
+      if (EXCLUDED_FILES.includes(file)) return false;
+      return true;
+    });
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      console.error(`❌ Error: Icons directory not found at "${ICONS_DIR}"`);
+      console.error(
+        "   Make sure you're running this script from the project root.",
+      );
+    } else if ((error as NodeJS.ErrnoException).code === "EACCES") {
+      console.error(`❌ Error: Permission denied reading "${ICONS_DIR}"`);
+    } else {
+      console.error(`❌ Error reading icons directory: ${error}`);
+    }
+    process.exit(1);
+  }
 }
 
 /**
@@ -82,23 +96,35 @@ function generateRegistryItem(filename: string): RegistryItem {
  */
 function getIconListNames(): string[] {
   const indexPath = path.join(ICONS_DIR, "index.ts");
-  const content = fs.readFileSync(indexPath, "utf-8");
 
-  // Match all name: "xxx" patterns in ICON_LIST
-  const namePattern = /name:\s*["']([^"']+)["']/g;
-  const names: string[] = [];
-  let match;
+  try {
+    const content = fs.readFileSync(indexPath, "utf-8");
 
-  while ((match = namePattern.exec(content)) !== null) {
-    const name = match[1];
-    // Only include names with hyphens (icon names like "github-icon")
-    // This excludes customProps names like "shakeOnClick", "dangerHover"
-    if (name.includes("-")) {
-      names.push(name);
+    // Match all name: "xxx" patterns in ICON_LIST
+    const namePattern = /name:\s*["']([^"']+)["']/g;
+    const names: string[] = [];
+    let match;
+
+    while ((match = namePattern.exec(content)) !== null) {
+      const name = match[1];
+      // Only include names with hyphens (icon names like "github-icon")
+      // This excludes customProps names like "shakeOnClick", "dangerHover"
+      if (name.includes("-")) {
+        names.push(name);
+      }
     }
-  }
 
-  return [...new Set(names)];
+    return [...new Set(names)];
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      console.error(`❌ Error: icons/index.ts not found at "${indexPath}"`);
+    } else if ((error as NodeJS.ErrnoException).code === "EACCES") {
+      console.error(`❌ Error: Permission denied reading "${indexPath}"`);
+    } else {
+      console.error(`❌ Error reading icons/index.ts: ${error}`);
+    }
+    process.exit(1);
+  }
 }
 
 /**
@@ -145,6 +171,28 @@ function validateIconList(iconFiles: string[]): void {
 }
 
 /**
+ * Write registry.json file
+ */
+function writeRegistry(content: string): void {
+  try {
+    fs.writeFileSync(REGISTRY_PATH, content);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "EACCES") {
+      console.error(
+        `❌ Error: Permission denied writing to "${REGISTRY_PATH}"`,
+      );
+    } else if ((error as NodeJS.ErrnoException).code === "ENOSPC") {
+      console.error("❌ Error: No space left on disk");
+    } else if ((error as NodeJS.ErrnoException).code === "EROFS") {
+      console.error("❌ Error: File system is read-only");
+    } else {
+      console.error(`❌ Error writing registry.json: ${error}`);
+    }
+    process.exit(1);
+  }
+}
+
+/**
  * Main function to generate registry.json
  */
 function generateRegistry(): void {
@@ -175,10 +223,10 @@ function generateRegistry(): void {
   };
 
   const jsonContent = JSON.stringify(registryWithNotice, null, 2) + "\n";
-  fs.writeFileSync(REGISTRY_PATH, jsonContent);
+  writeRegistry(jsonContent);
 
   console.log("");
-  console.log("✔ Registry generated successfully!");
+  console.log("✅ Registry generated successfully!");
   console.log(`  - Total icons: ${items.length}`);
 
   // Validate ICON_LIST sync
