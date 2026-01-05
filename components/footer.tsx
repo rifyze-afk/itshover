@@ -212,7 +212,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <RequestIconModal isOpen={isRequestModalOpen} onClose={() => setIsRequestModalOpen(false)} />
+      <RequestIconModal
+        isOpen={isRequestModalOpen}
+        onClose={() => setIsRequestModalOpen(false)}
+      />
     </motion.footer>
   );
 };
