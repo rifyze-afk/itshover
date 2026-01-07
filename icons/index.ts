@@ -783,7 +783,7 @@ const ICON_LIST: IconType[] = [
   },
   {
     name: "hotel-icon",
-    icon: HotelIcon,    
+    icon: HotelIcon,
     keywords: ["hotel", "lodging", "resort", "vacation", "travel"],
   },
   {

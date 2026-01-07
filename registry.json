@@ -22,6 +22,23 @@
       ]
     },
     {
+      "name": "airplane-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/airplane-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "alarm-clock-plus-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1705,6 +1722,23 @@
       ]
     },
     {
+      "name": "hostel-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/hostel-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "info-circle-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2087,6 +2121,23 @@
       "files": [
         {
           "path": "icons/party-popper-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "passport-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/passport-icon.tsx",
           "type": "registry:ui"
         },
         {
@@ -2767,6 +2818,23 @@
       "files": [
         {
           "path": "icons/trash-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "travel-bag",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/travel-bag.tsx",
           "type": "registry:ui"
         },
         {
