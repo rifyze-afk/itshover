@@ -16,10 +16,14 @@ const NotionIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
       animate(".notion-shell", { opacity: 1 }, { duration: 0.2 });
     }, [animate]);
 
-    useImperativeHandle(ref, () => ({
-      startAnimation: start,
-      stopAnimation: stop,
-    }));
+    useImperativeHandle(
+      ref,
+      () => ({
+        startAnimation: start,
+        stopAnimation: stop,
+      }),
+      [start, stop],
+    );
 
     return (
       <motion.svg

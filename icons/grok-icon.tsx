@@ -41,10 +41,14 @@ const GrokIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
       animate(".grok-core", { opacity: 0 }, { duration: 0.2 });
     }, [animate, scope]);
 
-    useImperativeHandle(ref, () => ({
-      startAnimation: start,
-      stopAnimation: stop,
-    }));
+    useImperativeHandle(
+      ref,
+      () => ({
+        startAnimation: start,
+        stopAnimation: stop,
+      }),
+      [start, stop],
+    );
 
     return (
       <motion.svg

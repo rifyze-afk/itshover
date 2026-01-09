@@ -3,7 +3,10 @@ import type { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
 const QwenIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
-  ({ size = 24, color = "currentColor", className = "" }, ref) => {
+  (
+    { size = 24, color = "currentColor", strokeWidth = 1, className = "" },
+    ref,
+  ) => {
     const [scope, animate] = useAnimate();
 
     const start = useCallback(() => {
@@ -17,11 +20,7 @@ const QwenIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
         { opacity: 0 },
         { duration: 1, ease: "easeInOut" },
       );
-      animate(
-        ".qwen-core",
-        { opacity: 1 },
-        { duration: 1, ease: "easeInOut" },
-      );
+      animate(".qwen-core", { opacity: 1 }, { duration: 1, ease: "easeInOut" });
     }, [animate, scope]);
 
     const stop = useCallback(() => {
@@ -34,10 +33,14 @@ const QwenIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
       animate(".qwen-core", { opacity: 0 }, { duration: 0.2 });
     }, [animate, scope]);
 
-    useImperativeHandle(ref, () => ({
-      startAnimation: start,
-      stopAnimation: stop,
-    }));
+    useImperativeHandle(
+      ref,
+      () => ({
+        startAnimation: start,
+        stopAnimation: stop,
+      }),
+      [start, stop],
+    );
 
     return (
       <motion.svg
@@ -52,6 +55,8 @@ const QwenIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
         style={{ flex: "none", lineHeight: 1 }}
         xmlns="http://www.w3.org/2000/svg"
         className={className}
+        stroke={color}
+        strokeWidth={strokeWidth}
       >
         <title>Qwen</title>
 

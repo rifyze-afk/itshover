@@ -26,10 +26,14 @@ const GolangIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
       animate(".speed-line", { x: 0 }, { duration: 0.2 });
     }, [animate]);
 
-    useImperativeHandle(ref, () => ({
-      startAnimation: start,
-      stopAnimation: stop,
-    }));
+    useImperativeHandle(
+      ref,
+      () => ({
+        startAnimation: start,
+        stopAnimation: stop,
+      }),
+      [start, stop],
+    );
 
     return (
       <motion.svg

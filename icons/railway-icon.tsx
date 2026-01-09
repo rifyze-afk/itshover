@@ -21,10 +21,14 @@ const RailwayIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
       animate(scope.current, { x: 0, y: 0 }, { duration: 0.15 });
     }, [animate, scope]);
 
-    useImperativeHandle(ref, () => ({
-      startAnimation: start,
-      stopAnimation: stop,
-    }));
+    useImperativeHandle(
+      ref,
+      () => ({
+        startAnimation: start,
+        stopAnimation: stop,
+      }),
+      [start, stop],
+    );
 
     return (
       <motion.svg
