@@ -188,6 +188,13 @@ import PassportIcon from "./passport-icon";
 import AirplaneIcon from "./airplane-icon";
 import TravelBag from "./travel-bag";
 import HotelIcon from "./hotel-icon";
+import GolangIcon from "./golang-icon";
+import RailwayIcon from "./railway-icon";
+import CursorIdeIcon from "./cursor-ide-icon";
+import NotionIcon from "./notion-icon";
+import GeminiIcon from "./gemini-icon";
+import QwenIcon from "./qwen-icon";
+import GrokIcon from "./grok-icon";
 
 export interface IconType {
   name: string;
@@ -1376,6 +1383,48 @@ const ICON_LIST: IconType[] = [
       "interface",
     ],
   },
+  {
+    name: "golang-icon",
+    icon: GolangIcon,
+    keywords: ["golang", "go", "programming", "language", "code", "developer"],
+  },
+  {
+    name: "railway-icon",
+    icon: RailwayIcon,
+    keywords: [
+      "railway",
+      "train",
+      "transport",
+      "travel",
+      "traveling",
+      "journey",
+      "cloud",
+    ],
+  },
+  {
+    name: "cursor-ide-icon",
+    icon: CursorIdeIcon,
+    keywords: ["cursor", "ide", "code", "coding", "cursor-ide"],
+  },
+  {
+    name: "notion-icon",
+    icon: NotionIcon,
+    keywords: ["notion", "notion-icon", "notion-svg", "docs", "notes"],
+  },
+  {
+    name: "gemini-icon",
+    icon: GeminiIcon,
+    keywords: ["gemini", "gemini-icon", "ai", "chatbot", "conversation"],
+  },
+  {
+    name: "qwen-icon",
+    icon: QwenIcon,
+    keywords: ["qwen", "qwen-icon", "ai", "chatbot", "conversation"],
+  },
+  {
+    name: "grok-icon",
+    icon: GrokIcon,
+    keywords: ["grok", "grok-icon", "ai", "chatbot", "conversation"],
+  },
 ].sort((a, b) => a.name.localeCompare(b.name));
-
 export { ICON_LIST };

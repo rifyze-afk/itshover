@@ -1161,6 +1161,23 @@
       ]
     },
     {
+      "name": "cursor-ide-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/cursor-ide-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "device-airpods-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1535,6 +1552,23 @@
       ]
     },
     {
+      "name": "gemini-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/gemini-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "ghost-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1628,6 +1662,40 @@
       "files": [
         {
           "path": "icons/gmail-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "golang-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/golang-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "grok-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/grok-icon.tsx",
           "type": "registry:ui"
         },
         {
@@ -2096,6 +2164,23 @@
       ]
     },
     {
+      "name": "notion-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/notion-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "paint-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2300,6 +2385,23 @@
       ]
     },
     {
+      "name": "qwen-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/qwen-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radio-icon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2308,6 +2410,23 @@
       "files": [
         {
           "path": "icons/radio-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "railway-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/railway-icon.tsx",
           "type": "registry:ui"
         },
         {

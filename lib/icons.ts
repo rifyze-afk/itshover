@@ -663,4 +663,32 @@ export const ICONS = [
     name: "volume x icon",
     path: "/icons/volume-x-icon",
   },
+  {
+    name: "golang icon",
+    path: "/icons/golang-icon",
+  },
+  {
+    name: "railway icon",
+    path: "/icons/railway-icon",
+  },
+  {
+    name: "qwen icon",
+    path: "/icons/qwen-icon",
+  },
+  {
+    name: "cursor ide icon",
+    path: "/icons/cursor-ide-icon",
+  },
+  {
+    name: "notion icon",
+    path: "/icons/notion-icon",
+  },
+  {
+    name: "gemini icon",
+    path: "/icons/gemini-icon",
+  },
+  {
+    name: "grok icon",
+    path: "/icons/grok-icon",
+  },
 ];
