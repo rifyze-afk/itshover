@@ -27,14 +27,10 @@ const BrandRailwayIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
       );
     };
 
-    useImperativeHandle(
-      ref,
-      () => ({
-        startAnimation: start,
-        stopAnimation: stop,
-      }),
-      [start, stop],
-    );
+    useImperativeHandle(ref, () => ({
+      startAnimation: start,
+      stopAnimation: stop,
+    }));
 
     return (
       <motion.svg
