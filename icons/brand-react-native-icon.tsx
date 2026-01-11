@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
 import { motion, useAnimate } from "motion/react";
 import type { AnimatedIconHandle, AnimatedIconProps } from "./types";
 
@@ -8,8 +8,13 @@ const BrandReactNativeIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
     ref,
   ) => {
     const [scope, animate] = useAnimate();
+    const animationControls = useRef<Array<ReturnType<typeof animate>>>([]);
 
     const start = async () => {
+      // Clear any existing animations
+      animationControls.current.forEach((control) => control.stop());
+      animationControls.current = [];
+
       // Smooth pop entrance
       await animate(
         ".orbit-system",
@@ -18,50 +23,60 @@ const BrandReactNativeIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
       );
 
       // Center dot gentle pulse
-      animate(
-        ".center-dot",
-        {
-          scale: [1, 1.3, 1],
-          opacity: [1, 0.8, 1],
-        },
-        {
-          duration: 2.5,
-          ease: "easeInOut",
-          repeat: Infinity,
-        },
+      animationControls.current.push(
+        animate(
+          ".center-dot",
+          {
+            scale: [1, 1.3, 1],
+            opacity: [1, 0.8, 1],
+          },
+          {
+            duration: 2.5,
+            ease: "easeInOut",
+            repeat: Infinity,
+          },
+        ),
       );
 
       // Smooth continuous rotation
-      animate(
-        ".orbit-system",
-        { rotate: 360 },
-        {
-          duration: 20,
-          ease: "linear",
-          repeat: Infinity,
-        },
+      animationControls.current.push(
+        animate(
+          ".orbit-system",
+          { rotate: 360 },
+          {
+            duration: 20,
+            ease: "linear",
+            repeat: Infinity,
+          },
+        ),
       );
 
       // Subtle wave through rings
       const rings = [".ring-1", ".ring-2", ".ring-3"];
       rings.forEach((ring, i) => {
-        animate(
-          ring,
-          {
-            opacity: [1, 0.7, 1],
-          },
-          {
-            duration: 3,
-            ease: "easeInOut",
-            repeat: Infinity,
-            delay: i * 1,
-          },
+        animationControls.current.push(
+          animate(
+            ring,
+            {
+              opacity: [1, 0.7, 1],
+            },
+            {
+              duration: 3,
+              ease: "easeInOut",
+              repeat: Infinity,
+              delay: i * 1,
+            },
+          ),
         );
       });
     };
 
-    const stop = async () => {
-      await animate(
+    const stop = () => {
+      // Cancel all infinite animations
+      animationControls.current.forEach((control) => control.stop());
+      animationControls.current = [];
+
+      animate(
         ".orbit-system",
         { rotate: 0, scale: 1 },
         { duration: 0.6, ease: [0.34, 1.56, 0.64, 1] },

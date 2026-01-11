@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle, useCallback } from "react";
+import { forwardRef, useImperativeHandle } from "react";
 import type { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 

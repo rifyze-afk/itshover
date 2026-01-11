@@ -9,10 +9,7 @@ import { CommandMenuProvider } from "@/components/command-menu-context";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LINKS } from "@/constants";
 import { Analytics } from "@vercel/analytics/react";
-import { StickyBanner } from "@/components/ui/sticky-banner";
 import { GithubStarsProvider } from "@/components/github-stars-context";
-import ExternalLinkIcon from "@/icons/external-link-icon";
-import Link from "next/link";
 import UmamiAnalytics from "@/components/UmamiAnalytics";
 
 const geistSans = Geist({

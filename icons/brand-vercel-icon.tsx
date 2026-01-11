@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle, useCallback } from "react";
+import { forwardRef, useImperativeHandle } from "react";
 import type { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
@@ -9,21 +9,21 @@ const BrandVercelIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   ) => {
     const [scope, animate] = useAnimate();
 
-    const start = useCallback(async () => {
+    const start = async () => {
       await animate(
         ".triangle",
         { rotateY: 180 },
         { duration: 0.6, ease: "easeInOut" },
       );
-    }, [animate]);
+    };
 
-    const stop = useCallback(async () => {
+    const stop = async () => {
       await animate(
         ".triangle",
         { rotateY: -180 },
         { duration: 0.6, ease: "easeInOut" },
       );
-    }, [animate]);
+    };
 
     useImperativeHandle(ref, () => ({
       startAnimation: start,

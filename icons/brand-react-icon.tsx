@@ -27,24 +27,24 @@ const BrandReactIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
           scale: [1.2, 1.35, 1.2],
           opacity: [1, 0.8, 1],
         },
-        { duration: 2, ease: "easeInOut", repeat: Infinity },
+        { duration: 2, ease: "easeInOut" },
       );
 
       // Subtle breathing effect on all orbits
       animate(
         ".orbit-1",
         { scale: [1, 1.02, 1] },
-        { duration: 3, ease: "easeInOut", repeat: Infinity },
+        { duration: 3, ease: "easeInOut" },
       );
       animate(
         ".orbit-2",
         { scale: [1, 1.03, 1] },
-        { duration: 3.5, ease: "easeInOut", repeat: Infinity, delay: 0.5 },
+        { duration: 3.5, ease: "easeInOut", delay: 0.5 },
       );
       animate(
         ".orbit-3",
         { scale: [1, 1.02, 1] },
-        { duration: 4, ease: "easeInOut", repeat: Infinity, delay: 1 },
+        { duration: 4, ease: "easeInOut", delay: 1 },
       );
     };
 
