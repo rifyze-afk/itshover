@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { LINKS, SPONSOR, TOKEN } from "@/constants";
+import { LINKS, SPONSOR } from "@/constants";
 import GithubIcon from "@/icons/github-icon";
 import TwitterXIcon from "@/icons/twitter-x-icon";
 import HeartIcon from "@/icons/heart-icon";

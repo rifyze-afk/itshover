@@ -3,6 +3,7 @@ import AnimatedNavbar from "@/components/examples/animated-navbar";
 import CollapsibleSidebar from "@/components/examples/collapsible-sidebar";
 import fs from "fs";
 import path from "path";
+import TakeuforwardNavbar from "@/components/examples/takeuforward-navbar";
 
 // Define the registry of examples
 // Add new examples to this array
@@ -43,6 +44,17 @@ const EXAMPLE_REGISTRY = [
       "A dashboard sidebar that expands and collapses with a smooth transition. Features icon-only mode with tooltips and animated toggle button.",
     tags: ["Sidebar", "Collapsible", "Dashboard", "Framer Motion", "Tooltip"],
   },
+  {
+    componentName: "Takeuforward Navbar",
+    slug: "takeuforward-navbar",
+    createdBy: "https://github.com/Abhijit-Jha",
+    filePath: "components/examples/takeuforward-navbar.tsx",
+    component: TakeuforwardNavbar,
+    description:
+      "A modern, interactive component featuring advanced animations and smooth state transitions.",
+    tags: ["UI", "Animation", "Framer Motion", "Interactive"],
+    fullWidth: true,
+  },
 ];
 
 export function getExamples() {
@@ -69,6 +81,7 @@ export function getExamples() {
       tags: example.tags,
       code,
       component: example.component,
+      fullWidth: example.fullWidth ?? false,
     };
   });
 }
