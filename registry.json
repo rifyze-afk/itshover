@@ -1586,14 +1586,14 @@
       ]
     },
     {
-      "name": "down-cheveron",
+      "name": "down-chevron",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "icons/down-cheveron.tsx",
+          "path": "icons/down-chevron.tsx",
           "type": "registry:ui"
         },
         {
@@ -2691,14 +2691,14 @@
       ]
     },
     {
-      "name": "right-cheveron",
+      "name": "right-chevron",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "icons/right-cheveron.tsx",
+          "path": "icons/right-chevron.tsx",
           "type": "registry:ui"
         },
         {

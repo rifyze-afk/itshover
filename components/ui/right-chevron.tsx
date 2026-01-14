@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle, useCallback } from "react";
 import type { AnimatedIconHandle, AnimatedIconProps } from "./types";
 import { motion, useAnimate } from "motion/react";
 
-const DownCheveron = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
+const RightChevron = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
   (
     { size = 24, color = "currentColor", strokeWidth = 2, className = "" },
     ref,
@@ -11,10 +11,8 @@ const DownCheveron = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
 
     const start = useCallback(async () => {
       await animate(
-        ".chevron-down",
-        {
-          y: [0, 6, 0],
-        },
+        ".chevron",
+        { x: [0, 6, 0] },
         {
           duration: 0.8,
           ease: "easeInOut",
@@ -23,7 +21,7 @@ const DownCheveron = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
     }, [animate]);
 
     const stop = useCallback(() => {
-      animate(".chevron-down", { y: 0 }, { duration: 0.2, ease: "easeInOut" });
+      animate(".chevron", { x: 0 }, { duration: 0.2, ease: "easeInOut" });
     }, [animate]);
 
     useImperativeHandle(ref, () => ({
@@ -34,7 +32,7 @@ const DownCheveron = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
     return (
       <motion.div
         ref={scope}
-        className={`inline-flex cursor-pointer items-center justify-center ${className}`}
+        className={`flex w-8 items-center justify-center ${className}`}
         onHoverStart={start}
         onHoverEnd={stop}
       >
@@ -48,15 +46,14 @@ const DownCheveron = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
           strokeWidth={strokeWidth}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="chevron-down"
+          className="chevron cursor-pointer"
         >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M6 9l6 6l6 -6" />
+          <path d="M9 6l6 6l-6 6" />
         </svg>
       </motion.div>
     );
   },
 );
 
-DownCheveron.displayName = "DownCheveron";
-export default DownCheveron;
+RightChevron.displayName = "RightChevron";
+export default RightChevron;

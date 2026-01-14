@@ -15,7 +15,7 @@ import MoonIcon from "../ui/moon-icon";
 import FilledBellIcon from "../ui/filled-bell-icon";
 import LogoutIcon from "../ui/logout-icon";
 import LockIcon from "../ui/lock-icon";
-import RightCheveron from "../ui/right-cheveron";
+import RightChevron from "../ui/right-chevron";
 import Image from "next/image";
 import { AnimatedIconHandle, AnimatedIconProps } from "../ui/types";
 
@@ -183,7 +183,7 @@ const DropdownItem = ({
       <div className="flex items-center gap-2">
         {locked && <LockIcon size={14} color="#eb7134" />}
         {hasChevron && (
-          <RightCheveron
+          <RightChevron
             size={12}
             className="text-zinc-500 dark:text-zinc-400"
           />
