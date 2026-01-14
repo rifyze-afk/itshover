@@ -44,6 +44,7 @@ import BrandStripeIcon from "./brand-stripe-icon";
 import BrandReactIcon from "./brand-react-icon";
 import BrandPaypalIcon from "./brand-paypal-icon";
 import BrandAwsIcon from "./brand-aws-icon";
+import BrandBagsFmIcon from "./brand-bags-fm-icon";
 import BrandThreadsIcon from "./brand-threads-icon";
 import BrandZoomIcon from "./brand-zoom-icon";
 import BrandReactNativeIcon from "./brand-react-native-icon";
@@ -1416,6 +1417,11 @@ const ICON_LIST: IconType[] = [
     name: "brand-aws-icon",
     icon: BrandAwsIcon,
     keywords: ["aws", "brand", "cloud", "amazon"],
+  },
+  {
+    name: "brand-bags-fm-icon",
+    icon: BrandBagsFmIcon,
+    keywords: ["bags", "fm", "brand", "logo", "shopping", "ecommerce"],
   },
   {
     name: "brand-threads-icon",

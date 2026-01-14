@@ -702,6 +702,23 @@
       ]
     },
     {
+      "name": "brand-bags-fm-icon",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "icons/brand-bags-fm-icon.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "icons/types.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "brand-cursor-icon",
       "type": "registry:ui",
       "registryDependencies": [],
